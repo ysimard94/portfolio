@@ -1,6 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const currentLocale = localStorage.getItem('locale')
+  if(!currentLocale) {
+    localStorage.setItem('locale', 'FR')
+  }
+})
+
+function changeLanguage(language) {
+  localStorage.setItem('locale', language)
+  window.location.reload()
+}
 </script>
 
 <template>
@@ -8,8 +21,9 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <HelloWorld />
+      <button @click="changeLanguage('FR')">FR</button>
+      <button @click="changeLanguage('EN')">EN</button>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
