@@ -1,35 +1,65 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { useThemeStore } from './store/ThemeStore';
+
+const theme = useThemeStore();
+
+if (localStorage.getItem('theme') === null) {
+  localStorage.setItem('theme', 'dark-theme');
+}
+
+function changeTheme() {
+
+  if (theme.theme === 'light-theme') {
+    theme.setTheme('dark-theme');
+    console.log(theme.theme)
+  } else {
+    theme.setTheme('light-theme');
+    console.log(theme.theme)
+  }
+}
+
 </script>
 
 <template>
-  <header>
+  <header :class="{ 'light-theme': theme.theme == 'light-theme' }">
     <div class="wrapper">
-      <button @click="$i18n.locale = 'FR'">FR</button>
-      <button @click="$i18n.locale = 'EN'">EN</button>
+      <div class="settings">
+        <button @click="$i18n.locale = 'FR'" v-if="$i18n.locale === 'EN'">FR</button>
+        <button @click="$i18n.locale = 'EN'" v-if="$i18n.locale === 'FR'">EN</button>
+        <button @click="changeTheme('light-theme')" v-if="theme.theme === 'dark-theme'">Light</button>
+        <button @click="changeTheme('dark-theme')" v-if="theme.theme === 'light-theme'">Dark</button>
+      </div>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">{{ $t('nav.home') }}</RouterLink>
+        <RouterLink to="/about">{{ $t('nav.about') }}</RouterLink>
       </nav>
     </div>
   </header>
   <router-view v-slot="{Component}">
     <transition name="slide" mode="out-in">
-      <component :is="Component" :key="$route.path"></component>  
+      <component :is="Component" :key="$route.path" :class="{ 'light-theme': theme.theme == 'light-theme' }"></component>  
     </transition>
   </router-view>
 </template>
 
 <style>
 :root {
-  --background-color-primary: #cecece;
-  --background-color-secondary: #fff;
-  --color-primary: #41b883;
+  --background-color-primary: #35495e;
+  --background-color-secondary: #41b883;
+  --color-primary: #fff;
   --color-secondary: #35495e;
+  --color-text: #fff;
+  --color-border: #35495e;
+}
+
+.light-theme {
+  --background-color-primary: #fff;
+  --background-color-secondary: #cecece;
+  --color-primary: #35495e;
+  --color-secondary: #41b883;
   --color-text: #35495e;
   --color-border: #eee;
-  --section-gap: 2rem;
 }
 
 header {
@@ -38,30 +68,12 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
@@ -87,20 +99,27 @@ nav a:first-of-type {
     border: 1px solid red;
     height: 100vh;
     width: 450px;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    align-items: center;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .settings {
+    margin-top: 2rem;
+  }
+
+  .wrapper {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    padding-left: 100px;
   }
 
   nav {
+    display: grid;
+    height: fit-content;
+    width: fit-content;
     text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
+    padding-bottom: 2rem;
+    font-size: 1.125rem;
   }
 }
 </style>
