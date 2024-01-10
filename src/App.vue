@@ -1,19 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  const currentLocale = localStorage.getItem('locale')
-  if(!currentLocale) {
-    localStorage.setItem('locale', 'FR')
-  }
-})
-
-function changeLanguage(language) {
-  localStorage.setItem('locale', language)
-  window.location.reload()
-}
 </script>
 
 <template>
@@ -22,8 +9,8 @@ function changeLanguage(language) {
 
     <div class="wrapper">
       <HelloWorld />
-      <button @click="changeLanguage('FR')">FR</button>
-      <button @click="changeLanguage('EN')">EN</button>
+      <button @click="$i18n.locale = 'FR'">FR</button>
+      <button @click="$i18n.locale = 'EN'">EN</button>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -85,6 +72,7 @@ nav a:first-of-type {
     opacity:0;
     transform: translateX(20%);
   }
+  
 @media (min-width: 1024px) {
   header {
     display: flex;
