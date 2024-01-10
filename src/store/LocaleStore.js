@@ -5,7 +5,7 @@ const getSettings = () => {
   return locale
 }
 
-export const useLocaleStore = defineStore('locale', {
+export const useLocaleStore = defineStore('LocaleStore', {
   state: () => ({
     locale: getSettings(),
   }),
