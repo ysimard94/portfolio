@@ -4,7 +4,6 @@ import { useThemeStore } from "./store/ThemeStore";
 import { useLocaleStore } from "./store/LocaleStore";
 
 const themeStore = useThemeStore();
-const localeStore = useLocaleStore();
 
 if (localStorage.getItem("theme") === null) {
     localStorage.setItem("theme", "dark-theme");
@@ -84,6 +83,9 @@ function changeTheme() {
             <nav>
                 <RouterLink to="/">{{ $t("nav.home") }}</RouterLink>
                 <RouterLink to="/about">{{ $t("nav.about") }}</RouterLink>
+                <RouterLink to="/portfolio">{{
+                    $t("nav.portfolio")
+                }}</RouterLink>
             </nav>
         </div>
     </header>
@@ -93,6 +95,7 @@ function changeTheme() {
                 :is="Component"
                 :key="$route.path"
                 :class="{ 'light-theme': themeStore.theme == 'light-theme' }"
+                class="container"
             ></component>
         </transition>
     </router-view>
@@ -109,6 +112,21 @@ function changeTheme() {
     --color-border: #35495e;
 }
 
+header {
+    background-color: var(--background-color-primary);
+    line-height: 1.5;
+    max-height: 100vh;
+    color: var(--color-primary);
+}
+
+.container {
+    height: fit-content;
+    width: 100%;
+    margin-block: auto;
+    margin-inline: auto;
+    padding-inline: 100px;
+}
+
 .light-theme {
     --background-color-primary: #f7f6f6;
     --background-color-nav: hsl(0, 0%, 10%);
@@ -117,13 +135,6 @@ function changeTheme() {
     --color-secondary: #41b883;
     --color-text: #35495e;
     --color-border: #eee;
-}
-
-header {
-    background-color: var(--background-color-primary);
-    line-height: 1.5;
-    max-height: 100vh;
-    color: var(--color-primary);
 }
 
 .settings {
@@ -187,6 +198,7 @@ nav a:hover:before {
 
 nav a:hover {
     color: white;
+    letter-spacing: 2px;
 }
 
 /*------------- View animation  --------------*/

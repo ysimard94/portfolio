@@ -1,6 +1,12 @@
 {
-  "nav": {
-    "home": "Accueil",
-    "about": "À propos"
-  }
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "portfolio": "Portfolio"
+    },
+    "notFound": {
+        "title": "Page non trouvée",
+        "message": "La page que vous avez demandée n'existe pas.",
+        "home": "Retour à l'accueil"
+    }
 }
