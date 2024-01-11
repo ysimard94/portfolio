@@ -112,29 +112,30 @@ function changeTheme() {
     --color-border: #35495e;
 }
 
-header {
-    background-color: var(--background-color-primary);
-    line-height: 1.5;
-    max-height: 100vh;
-    color: var(--color-primary);
-}
-
-.container {
-    height: fit-content;
-    width: 100%;
-    margin-block: auto;
-    margin-inline: auto;
-    padding-inline: 100px;
-}
-
 .light-theme {
-    --background-color-primary: #f7f6f6;
-    --background-color-nav: hsl(0, 0%, 10%);
+    --background-color-primary: hsl(0, 0%, 100%);
+    --background-color-nav: hsl(0, 0%, 95%);
     --background-color-secondary: #cecece;
     --color-primary: #35495e;
     --color-secondary: #41b883;
     --color-text: #35495e;
     --color-border: #eee;
+}
+
+header {
+    background-color: var(--background-color-nav);
+    line-height: 1.5;
+    max-height: 100vh;
+    min-width: 400px;
+    color: var(--color-primary);
+}
+
+.container {
+    background-color: var(--background-color-primary);
+    color: var(--color-primary);
+    height: fit-content;
+    width: 100%;
+    height: 100svh;
 }
 
 .settings {
@@ -220,7 +221,7 @@ nav a:hover {
     header {
         display: flex;
         height: 100vh;
-        width: 450px;
+        width: 400px;
         align-items: center;
     }
 

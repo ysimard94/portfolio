@@ -4,6 +4,11 @@
         "about": "À propos",
         "portfolio": "Portfolio"
     },
+    "home": {
+        "title": "Yannick Simard",
+        "subtitle": "Full-stack",
+        "message": "Je suis un développeur web full-stack basé à Montréal, Québec."
+    },
     "notFound": {
         "title": "Page non trouvée",
         "message": "La page que vous avez demandée n'existe pas.",
