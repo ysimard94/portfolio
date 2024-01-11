@@ -4,8 +4,8 @@ import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
 import { createPinia } from "pinia";
 import { useLocaleStore } from "./store/LocaleStore";
-import FR from "./locale/fr.json";
-import EN from "./locale/en.json";
+import FR from "./locales/fr.json";
+import EN from "./locales/en.json";
 import App from "./App.vue";
 import router from "./router";
 
