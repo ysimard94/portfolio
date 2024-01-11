@@ -100,7 +100,8 @@ function changeTheme() {
 
 <style>
 :root {
-    --background-color-primary: hsl(0, 0%, 7%);
+    --background-color-primary: hsl(0, 0%, 10%);
+    --background-color-nav: hsl(0, 0%, 7%);
     --background-color-secondary: #41b883;
     --color-primary: #fff;
     --color-secondary: #35495e;
@@ -109,7 +110,8 @@ function changeTheme() {
 }
 
 .light-theme {
-    --background-color-primary: #fff;
+    --background-color-primary: #f7f6f6;
+    --background-color-nav: hsl(0, 0%, 10%);
     --background-color-secondary: #cecece;
     --color-primary: #35495e;
     --color-secondary: #41b883;
@@ -156,13 +158,44 @@ nav a:first-of-type {
     border: 0;
 }
 
+nav a {
+    display: block;
+    position: relative;
+    transition: 300ms;
+    z-index: 2;
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff497c;
+    transition: 300ms;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+nav a:hover:before {
+    transition: transform 300ms;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+nav a:hover {
+    color: white;
+}
+
 /*------------- View animation  --------------*/
 
 .slide-enter-active,
 .slide-leave-active {
     transition:
-        opacity 500ms,
-        transform 500ms;
+        opacity 400ms,
+        transform 400ms;
 }
 
 .slide-enter-from,
