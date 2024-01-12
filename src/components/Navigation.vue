@@ -1,24 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink } from "vue-router";
 import { useThemeStore } from "@/store/ThemeStore";
 import { useLocaleStore } from "@/store/LocaleStore";
 
 const themeStore = useThemeStore();
-const LocaleStore = useLocaleStore();
-
-if (localStorage.getItem("theme") === null) {
-    localStorage.setItem("theme", "dark-theme");
-}
-
-function changeTheme() {
-    if (themeStore.theme === "light-theme") {
-        themeStore.setTheme("dark-theme");
-        console.log(themeStore.theme);
-    } else {
-        themeStore.setTheme("light-theme");
-        console.log(themeStore.theme);
-    }
-}
+const localeStore = useLocaleStore();
 </script>
 
 <template>
@@ -26,7 +12,7 @@ function changeTheme() {
         <div class="wrapper">
             <div class="settings">
                 <button
-                    @click="changeTheme('light-theme')"
+                    @click="themeStore.setTheme('light-theme')"
                     v-if="themeStore.theme === 'dark-theme'"
                 >
                     <!-- Icon from https://heroicons.dev/ -->
@@ -47,7 +33,7 @@ function changeTheme() {
                     </svg>
                 </button>
                 <button
-                    @click="changeTheme('dark-theme')"
+                    @click="themeStore.setTheme('dark-theme')"
                     v-if="themeStore.theme === 'light-theme'"
                 >
                     <!-- Icon from https://heroicons.dev/ -->
@@ -71,7 +57,7 @@ function changeTheme() {
                 <button
                     @click="
                         $i18n.locale = 'FR';
-                        LocaleStore.setLocale('FR');
+                        localeStore.setLocale('FR');
                     "
                     v-if="$i18n.locale === 'EN'"
                 >
@@ -80,7 +66,7 @@ function changeTheme() {
                 <button
                     @click="
                         $i18n.locale = 'EN';
-                        LocaleStore.setLocale('EN');
+                        localeStore.setLocale('EN');
                     "
                     v-if="$i18n.locale === 'FR'"
                 >
