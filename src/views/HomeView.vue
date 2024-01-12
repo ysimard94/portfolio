@@ -95,4 +95,17 @@ p {
     display: flex;
     gap: 0.25rem;
 }
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-5px);
+    }
+}
+
+a:hover {
+    animation: bounce 1s infinite;
+}
 </style>
