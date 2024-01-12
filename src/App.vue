@@ -209,6 +209,13 @@ nav a:hover {
     letter-spacing: 2px;
 }
 
+main {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding-inline: 2rem;
+    max-width: 850px;
+}
 /*------------- View animation  --------------*/
 
 .slide-enter-active,

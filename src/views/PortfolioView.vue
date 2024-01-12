@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-    <div class="portfolio">
+    <main>
         <h1>This is a portfolio page</h1>
-    </div>
+    </main>
 </template>

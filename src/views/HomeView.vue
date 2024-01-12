@@ -51,11 +51,6 @@
 </template>
 
 <style scoped>
-main {
-    display: flex;
-    margin-inline: auto;
-}
-
 h1 {
     font-size: 3.5rem;
     font-weight: 500;
@@ -70,8 +65,6 @@ a > * {
 section {
     display: flex;
     align-items: center;
-    max-width: 850px;
-    padding-inline: 2rem;
     margin: auto;
     gap: 4rem;
 }
