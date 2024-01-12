@@ -48,7 +48,7 @@ function changeTheme() {
     --background-color-secondary: #41b883;
     --color-primary: #fff;
     --color-secondary: #35495e;
-    --color-text: #fff;
+    --color-text: hsl(0, 0%, 90%);
     --color-border: #35495e;
 }
 
@@ -65,7 +65,7 @@ function changeTheme() {
 .container {
     display: flex;
     background-color: var(--background-color-primary);
-    color: var(--color-primary);
+    color: var(--color-text);
     height: fit-content;
     width: 100%;
     height: 100svh;
@@ -150,6 +150,7 @@ main {
     padding-inline: 2rem;
     max-width: 850px;
 }
+
 /*------------- View animation  --------------*/
 
 .slide-enter-active,

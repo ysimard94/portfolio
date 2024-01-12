@@ -52,8 +52,11 @@
 
 <style scoped>
 h1 {
-    font-size: 3.5rem;
-    font-weight: 500;
+    font-family: Yantramanav;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.2;
 }
 
 a > * {
@@ -71,6 +74,7 @@ section {
 
 p {
     line-height: 1.75;
+    font-style: italic;
 }
 
 .profile-picture {
