@@ -92,7 +92,7 @@ main {
 .slide-enter-from,
 .slide-leave-to {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
 }
 
 @media (min-width: 1024px) {
