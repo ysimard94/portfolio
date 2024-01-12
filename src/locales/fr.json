@@ -2,7 +2,8 @@
     "nav": {
         "home": "Accueil",
         "about": "À propos",
-        "portfolio": "Portfolio"
+        "portfolio": "Portfolio",
+        "contact": "Contact"
     },
     "home": {
         "title": "Yannick Simard",

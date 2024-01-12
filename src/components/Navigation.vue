@@ -93,6 +93,7 @@ function changeTheme() {
                 <RouterLink to="/portfolio">{{
                     $t("nav.portfolio")
                 }}</RouterLink>
+                <RouterLink to="/contact">{{ $t("nav.contact") }}</RouterLink>
             </nav>
         </div>
     </header>
