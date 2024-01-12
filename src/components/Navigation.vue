@@ -85,7 +85,7 @@ const localeStore = useLocaleStore();
     </header>
 </template>
 
-<style>
+<style scoped>
 header {
     background-color: var(--background-color-nav);
     line-height: 1.5;
