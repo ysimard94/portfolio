@@ -69,6 +69,7 @@ function changeTheme() {
     height: fit-content;
     width: 100%;
     height: 100svh;
+    transition: background-color 500ms;
 }
 
 main {
