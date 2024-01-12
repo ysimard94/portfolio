@@ -71,78 +71,6 @@ function changeTheme() {
     height: 100svh;
 }
 
-header {
-    background-color: var(--background-color-nav);
-    line-height: 1.5;
-    max-height: 100vh;
-    min-width: 400px;
-    color: var(--color-primary);
-}
-
-.settings {
-    display: flex;
-    justify-items: center;
-    justify-content: space-between;
-    padding-right: 100px;
-}
-
-.settings button {
-    height: 32px;
-    width: 32px;
-}
-
-button {
-    background-color: transparent;
-    border: 0;
-    color: var(--color-primary);
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-nav a.router-link-exact-active {
-    color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-    background-color: transparent;
-}
-
-nav a:first-of-type {
-    border: 0;
-}
-
-nav a {
-    display: block;
-    position: relative;
-    transition: 300ms;
-    z-index: 2;
-}
-
-nav a:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ff497c;
-    transition: 300ms;
-    transform-origin: right;
-    transform: scaleX(0);
-    z-index: -1;
-}
-
-nav a:hover:before {
-    transition: transform 300ms;
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-nav a:hover {
-    color: white;
-    letter-spacing: 2px;
-}
-
 main {
     display: flex;
     align-items: center;
@@ -167,13 +95,6 @@ main {
 }
 
 @media (min-width: 1024px) {
-    header {
-        display: flex;
-        height: 100vh;
-        width: 400px;
-        align-items: center;
-    }
-
     .settings {
         margin-top: 2rem;
     }
@@ -182,7 +103,7 @@ main {
         display: grid;
         height: 100%;
         width: 100%;
-        padding-left: 100px;
+        padding-left: 75px;
     }
 
     nav {

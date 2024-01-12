@@ -84,3 +84,87 @@ const localeStore = useLocaleStore();
         </div>
     </header>
 </template>
+
+<style>
+header {
+    background-color: var(--background-color-nav);
+    line-height: 1.5;
+    max-height: 100svh;
+    min-width: 350px;
+    color: var(--color-primary);
+}
+
+.settings {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    padding-right: 75px;
+}
+
+.settings button {
+    height: 32px;
+    width: 32px;
+}
+
+svg path {
+    fill: transparent;
+    transition: fill 300ms;
+}
+
+button:hover svg path {
+    fill: currentColor;
+    transition: fill 300ms;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+nav a.router-link-exact-active {
+    color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+    background-color: transparent;
+}
+
+nav a:first-of-type {
+    border: 0;
+}
+
+nav a {
+    display: block;
+    position: relative;
+    transition: 300ms;
+    z-index: 2;
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff497c;
+    transition: 300ms;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+nav a:hover:before {
+    transition: transform 300ms;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+nav a:hover {
+    color: white;
+    letter-spacing: 2px;
+}
+</style>
