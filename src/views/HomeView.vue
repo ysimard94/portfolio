@@ -105,7 +105,8 @@ p {
     }
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
     animation: bounce 1s infinite;
 }
 </style>

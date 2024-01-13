@@ -111,7 +111,8 @@ svg path {
     transition: fill 300ms;
 }
 
-button:hover svg path {
+button:hover svg path,
+button:focus-visible svg path {
     fill: currentColor;
     transition: fill 300ms;
 }
@@ -122,14 +123,6 @@ button {
     color: var(--color-primary);
     cursor: pointer;
     font-size: 1rem;
-}
-
-nav a.router-link-exact-active {
-    color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-    background-color: transparent;
 }
 
 nav a:first-of-type {
@@ -157,13 +150,15 @@ nav a:before {
     z-index: -1;
 }
 
-nav a:hover:before {
+nav a:hover:before,
+nav a:focus-visible:before {
     transition: transform 300ms;
     transform-origin: left;
     transform: scaleX(1);
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus-visible {
     color: white;
     letter-spacing: 2px;
 }
