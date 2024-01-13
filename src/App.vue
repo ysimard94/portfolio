@@ -2,22 +2,11 @@
 import Navigation from "./components/Navigation.vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useThemeStore } from "./store/ThemeStore";
-import { useLocaleStore } from "./store/LocaleStore";
 
 const themeStore = useThemeStore();
 
 if (localStorage.getItem("theme") === null) {
     localStorage.setItem("theme", "dark-theme");
-}
-
-function changeTheme() {
-    if (themeStore.theme === "light-theme") {
-        themeStore.setTheme("dark-theme");
-        console.log(themeStore.theme);
-    } else {
-        themeStore.setTheme("light-theme");
-        console.log(themeStore.theme);
-    }
 }
 </script>
 
@@ -52,6 +41,10 @@ function changeTheme() {
     --color-border: #35495e;
 }
 
+body {
+    background-color: var(--background-color-primary);
+}
+
 .light-theme {
     --background-color-primary: hsl(0, 0%, 100%);
     --background-color-nav: hsl(0, 0%, 95%);
@@ -64,7 +57,7 @@ function changeTheme() {
 
 .container {
     display: flex;
-    background-color: var(--background-color-primary);
+    background-color: inherit;
     color: var(--color-text);
     height: fit-content;
     width: 100%;
