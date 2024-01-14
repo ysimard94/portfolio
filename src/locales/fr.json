@@ -17,11 +17,13 @@
         "projects": {
             "cantina": {
                 "title": "Cantina",
-                "description": "A collaborative application to manage your wine cellars."
+                "description": "Application collaborative de gestion de celliers.",
+                "alt": "Image de l'application Cantina"
             },
             "art-montreal": {
-                "title": "Art installations in Montréal",
-                "description": "A web application to discover art in Montréal."
+                "title": "Intallations d'art public à Montréal.",
+                "description": "Une application web pour découvrir les installations d'art public à Montréal.",
+                "alt": "Image de l'application Art Montreal"
             }
         }
     },

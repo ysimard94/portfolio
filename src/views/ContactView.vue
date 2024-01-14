@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <section>
         <h1>This is a contact page</h1>
-    </main>
+    </section>
 </template>

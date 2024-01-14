@@ -93,9 +93,11 @@ const localeStore = useLocaleStore();
 
 <style scoped>
 header {
+    position: sticky;
+    top: 0;
     background-color: var(--background-color-nav);
     line-height: 1.5;
-    max-height: 100svh;
+    min-height: 100svh;
     min-width: 350px;
     color: var(--color-primary);
 }

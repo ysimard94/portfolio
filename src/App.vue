@@ -18,15 +18,13 @@ if (localStorage.getItem("theme") === null) {
         }"
     >
         <Navigation />
-        <router-view v-slot="{ Component }">
-            <transition name="slide" mode="out-in">
-                <component
-                    :is="Component"
-                    :key="$route.path"
-                    class="container"
-                ></component>
-            </transition>
-        </router-view>
+        <main>
+            <router-view v-slot="{ Component }">
+                <transition name="slide" mode="out-in">
+                    <component :is="Component" :key="$route.path"></component>
+                </transition>
+            </router-view>
+        </main>
     </div>
 </template>
 
@@ -56,21 +54,29 @@ body {
 }
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: auto 1fr;
     background-color: inherit;
     color: var(--color-text);
     height: fit-content;
     width: 100%;
-    height: 100svh;
+    min-height: 100svh;
     transition: background-color 500ms;
 }
 
 main {
-    display: flex;
+    display: grid;
     align-items: center;
     margin: auto;
     padding-inline: 2rem;
     max-width: 850px;
+}
+
+.wrapper {
+    position: sticky;
+    bottom: 0;
+    height: 100svh;
 }
 
 /*------------- View animation  --------------*/
@@ -94,8 +100,10 @@ main {
     }
 
     .wrapper {
+        position: sticky;
+        top: 0;
         display: grid;
-        height: 100%;
+        height: 100svh;
         width: 100%;
         padding-left: 75px;
     }
