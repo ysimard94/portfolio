@@ -74,12 +74,18 @@ const localeStore = useLocaleStore();
                 </button>
             </div>
             <nav>
-                <RouterLink to="/">{{ $t("nav.home") }}</RouterLink>
-                <RouterLink to="/about">{{ $t("nav.about") }}</RouterLink>
-                <RouterLink to="/portfolio">{{
+                <RouterLink to="/" active-class="active">{{
+                    $t("nav.home")
+                }}</RouterLink>
+                <RouterLink to="/about" active-class="active">{{
+                    $t("nav.about")
+                }}</RouterLink>
+                <RouterLink to="/portfolio" active-class="active">{{
                     $t("nav.portfolio")
                 }}</RouterLink>
-                <RouterLink to="/contact">{{ $t("nav.contact") }}</RouterLink>
+                <RouterLink to="/contact" active-class="active">{{
+                    $t("nav.contact")
+                }}</RouterLink>
             </nav>
         </div>
     </header>
@@ -125,10 +131,6 @@ button {
     font-size: 1rem;
 }
 
-nav a:first-of-type {
-    border: 0;
-}
-
 nav a {
     display: block;
     position: relative;
@@ -143,17 +145,17 @@ nav a:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ff497c;
-    transition: 300ms;
-    transform-origin: right;
+    background: hsl(343, 100%, 64%);
+    transition: 250ms;
+    transform-origin: left;
     transform: scaleX(0);
     z-index: -1;
 }
 
 nav a:hover:before,
 nav a:focus-visible:before {
-    transition: transform 300ms;
-    transform-origin: left;
+    transition: transform 250ms;
+    transform-origin: right;
     transform: scaleX(1);
 }
 
@@ -161,5 +163,9 @@ nav a:hover,
 nav a:focus-visible {
     color: white;
     letter-spacing: 2px;
+}
+
+.active {
+    border-left: 2px solid hsl(343, 100%, 64%);
 }
 </style>
