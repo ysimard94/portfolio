@@ -10,6 +10,21 @@
         "subtitle": "Full-stack",
         "message": "Je suis un développeur web full-stack basé à Montréal, Québec."
     },
+    "portfolio": {
+        "title": "Portfolio",
+        "subtitle": "Some of my projects",
+        "message": "Here are some of my projects. You can also check my GitHub profile for more.",
+        "projects": {
+            "cantina": {
+                "title": "Cantina",
+                "description": "A collaborative application to manage your wine cellars."
+            },
+            "art-montreal": {
+                "title": "Art installations in Montréal",
+                "description": "A web application to discover art in Montréal."
+            }
+        }
+    },
     "notFound": {
         "title": "Page non trouvée",
         "message": "La page que vous avez demandée n'existe pas.",

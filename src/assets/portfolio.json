@@ -1,0 +1,12 @@
+{
+    "projects": [
+        {
+            "name": "$t{'cantina.name'}",
+            "description": "$t{'cantina.description'}"
+        },
+        {
+            "name": "$t{'installations.name'}",
+            "description": "$t{'installations.description'}"
+        }
+    ]
+}
