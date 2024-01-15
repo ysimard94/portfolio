@@ -21,9 +21,14 @@
                 "alt": "Image de l'application Cantina"
             },
             "art-montreal": {
-                "title": "Intallations d'art public à Montréal.",
-                "description": "Une application web pour découvrir les installations d'art public à Montréal.",
+                "title": "Intallations d'art public à Montréal",
+                "description": "Une application web à page unique pour découvrir les installations d'art public à Montréal.",
                 "alt": "Image de l'application Art Montreal"
+            },
+            "stampee": {
+                "title": "Stampee",
+                "description": "Un site d'enchère où l'utilisateur peut gérer et miser sur des enchères de timbres.",
+                "alt": "Image du site Stampee."
             }
         }
     },

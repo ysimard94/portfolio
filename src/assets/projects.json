@@ -6,16 +6,21 @@
             "src": "mick.webp",
             "alt": "portfolio.projects.cantina.alt"
         },
-        "languages": ["vue.svg", "laravel.svg", "vite-svgrepo-com.svg"]
-    },
-    {
-        "title": "portfolio.projects.cantina.title",
-        "description": "portfolio.projects.cantina.description",
-        "image": {
-            "src": "mick.webp",
-            "alt": "portfolio.projects.cantina.alt"
-        },
-        "languages": ["vue.svg", "laravel.svg", "vite-svgrepo-com.svg"]
+        "languages": [
+            {
+                "src": "vue.svg",
+                "alt": "Vue"
+            },
+            {
+                "src": "laravel.svg",
+                "alt": "Laravel"
+            },
+            {
+                "src": "vite-svgrepo-com.svg",
+                "alt": "Vite"
+            }
+        ],
+        "github": "https://github.com/ysimard94/Cantina"
     },
     {
         "title": "portfolio.projects.art-montreal.title",
@@ -24,6 +29,31 @@
             "src": "mick.webp",
             "alt": "portfolio.projects.art-montreal.alt"
         },
-        "languages": ["vue.svg", "laravel.svg", "vite-svgrepo-com.svg"]
+        "languages": [
+            {
+                "src": "javascript-svgrepo-com.svg",
+                "alt": "Javascript"
+            }
+        ],
+        "github": "https://github.com/ysimard94/Installations-Oeuvres-MTL"
+    },
+    {
+        "title": "portfolio.projects.stampee.title",
+        "description": "portfolio.projects.stampee.description",
+        "image": {
+            "src": "mick.webp",
+            "alt": "portfolio.projects.stampee.alt"
+        },
+        "languages": [
+            {
+                "src": "php-logo.svg",
+                "alt": "PHP"
+            },
+            {
+                "src": "mysql-icon.svg",
+                "alt": "MySQL"
+            }
+        ],
+        "github": "https://github.com/ysimard94/stampee"
     }
 ]

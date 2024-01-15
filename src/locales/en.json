@@ -17,13 +17,18 @@
         "projects": {
             "cantina": {
                 "title": "Cantina",
-                "description": "A collaborative application to manage your wine cellars.",
+                "description": "A collaborative mobile web application to manage your wine cellars.",
                 "alt": "Image of Cantina application"
             },
             "art-montreal": {
                 "title": "Art installations in Montréal",
-                "description": "A web application to discover art in Montréal.",
+                "description": "A single page web application to discover art in Montréal.",
                 "alt": "Image of Art installations in Montréal application"
+            },
+            "stampee": {
+                "title": "Stampee",
+                "description": "An auctionning website where you can create auctions and bid on stamps.",
+                "alt": "Image of the Stampee website."
             }
         }
     },

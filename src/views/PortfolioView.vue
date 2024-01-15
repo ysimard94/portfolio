@@ -25,15 +25,39 @@ export default {
                 <h2>{{ $t(`${project.title}`) }}</h2>
                 <p>{{ $t(`${project.description}`) }}</p>
                 <div class="languages">
-                    <span
+                    <button
                         v-for="language in project.languages"
                         class="language"
                     >
-                        <img :src="`/languages/${language}`" :alt="language" />
-                    </span>
+                        <img
+                            v-if="language.alt != 'PHP'"
+                            :src="`/languages/${language.src}`"
+                            :alt="language.alt"
+                        />
+                        <svg
+                            v-else
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 -1 100 50"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="m7.579 10.123 14.204 0c4.169 0.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-0.247 1.873-0.795 3.71-1.643 5.512-0.813 1.802-1.943 3.427-3.392 4.876-1.767 1.837-3.657 3.003-5.671 3.498-2.014 0.495-4.099 0.742-6.254 0.742l-6.36 0-2.014 10.07-7.367 0 7.579-38.001 0 0m6.201 6.042-3.18 15.9c0.212 0.035 0.424 0.053 0.636 0.053 0.247 0 0.495 0 0.742 0 3.392 0.035 6.219-0.3 8.48-1.007 2.261-0.742 3.781-3.321 4.558-7.738 0.636-3.71 0-5.848-1.908-6.413-1.873-0.565-4.222-0.83-7.049-0.795-0.424 0.035-0.83 0.053-1.219 0.053-0.353 0-0.724 0-1.113 0l0.053-0.053"
+                            />
+                            <path
+                                fill="currentColor"
+                                d="m41.093 0 7.314 0-2.067 10.123 6.572 0c3.604 0.071 6.289 0.813 8.056 2.226 1.802 1.413 2.332 4.099 1.59 8.056l-3.551 17.649-7.42 0 3.392-16.854c0.353-1.767 0.247-3.021-0.318-3.763-0.565-0.742-1.784-1.113-3.657-1.113l-5.883-0.053-4.346 21.783-7.314 0 7.632-38.054 0 0"
+                            />
+                            <path
+                                fill="currentColor"
+                                d="m70.412 10.123 14.204 0c4.169 0.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-0.247 1.873-0.795 3.71-1.643 5.512-0.813 1.802-1.943 3.427-3.392 4.876-1.767 1.837-3.657 3.003-5.671 3.498-2.014 0.495-4.099 0.742-6.254 0.742l-6.36 0-2.014 10.07-7.367 0 7.579-38.001 0 0m6.201 6.042-3.18 15.9c0.212 0.035 0.424 0.053 0.636 0.053 0.247 0 0.495 0 0.742 0 3.392 0.035 6.219-0.3 8.48-1.007 2.261-0.742 3.781-3.321 4.558-7.738 0.636-3.71 0-5.848-1.908-6.413-1.873-0.565-4.222-0.83-7.049-0.795-0.424 0.035-0.83 0.053-1.219 0.053-0.353 0-0.724 0-1.113 0l0.053-0.053"
+                            />
+                        </svg>
+
+                        <span class="tooltip">{{ language.alt }}</span>
+                    </button>
                 </div>
                 <div class="social-media">
-                    <a href="https://github.com/ysimard94" target="_blank"
+                    <a :href="project.github" target="_blank"
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
                             x="0px"
@@ -89,12 +113,51 @@ export default {
 
 .languages {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
-.language img {
-    height: 32px;
+.language {
+    position: relative;
     width: 32px;
+    color: var(--color-text);
+    background-color: var(--background-color);
+    border: transparent;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: calc(100%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--background-color-tooltip);
+    color: var(--color-tooltip);
+    z-index: 1;
+    transition: 200ms;
+}
+
+.tooltip::after {
+    content: ' ';
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-top: 2px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: hsl(0, 0%, 65%) transparent transparent transparent;
+}
+
+.language:hover .tooltip,
+.language:focus-visible .tooltip {
+    bottom: calc(100% + 0.75rem);
+    visibility: visible;
+    opacity: 1;
 }
 
 h2 {
