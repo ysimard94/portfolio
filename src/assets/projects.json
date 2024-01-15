@@ -1,0 +1,29 @@
+[
+    {
+        "title": "portfolio.projects.cantina.title",
+        "description": "portfolio.projects.cantina.description",
+        "image": {
+            "src": "mick.webp",
+            "alt": "portfolio.projects.cantina.alt"
+        },
+        "languages": ["vue.svg", "laravel.svg", "vite-svgrepo-com.svg"]
+    },
+    {
+        "title": "portfolio.projects.cantina.title",
+        "description": "portfolio.projects.cantina.description",
+        "image": {
+            "src": "mick.webp",
+            "alt": "portfolio.projects.cantina.alt"
+        },
+        "languages": ["vue.svg", "laravel.svg", "vite-svgrepo-com.svg"]
+    },
+    {
+        "title": "portfolio.projects.art-montreal.title",
+        "description": "portfolio.projects.art-montreal.description",
+        "image": {
+            "src": "mick.webp",
+            "alt": "portfolio.projects.art-montreal.alt"
+        },
+        "languages": ["vue.svg", "laravel.svg", "vite-svgrepo-com.svg"]
+    }
+]

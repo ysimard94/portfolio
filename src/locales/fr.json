@@ -17,7 +17,7 @@
         "projects": {
             "cantina": {
                 "title": "Cantina",
-                "description": "Application collaborative de gestion de celliers.",
+                "description": "Une application collaborative web  de gestion de celliers optimisée pour mobile.",
                 "alt": "Image de l'application Cantina"
             },
             "art-montreal": {

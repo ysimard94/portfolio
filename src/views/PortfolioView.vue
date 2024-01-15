@@ -1,44 +1,38 @@
 <script>
-import portfolioJSON from "../assets/portfolio.json";
-
-console.log(portfolioJSON[1].image);
+import projectsJSON from '../assets/projects.json'
 
 export default {
-    name: "PortfolioView",
+    name: 'PortfolioView',
     data() {
         return {
-            projects: portfolioJSON,
-        };
+            projects: projectsJSON,
+        }
     },
-};
+}
 </script>
 
 <template>
     <section>
         <h1>This is a portfolio page</h1>
-        <div v-for="portfolio in projects" class="project">
+        <div v-for="project in projects" class="project">
             <div class="preview-image">
                 <img
-                    :src="`/projects/${portfolio.image.src}`"
-                    :alt="$t(`${portfolio.image.alt}`)"
+                    :src="`/projects/${project.image.src}`"
+                    :alt="$t(`${project.image.alt}`)"
                 />
             </div>
             <div class="content">
-                <h2>{{ $t(`${portfolio.title}`) }}</h2>
-                <p>{{ $t(`${portfolio.description}`) }}</p>
-                <div class="tools">
-                    <span> react </span>
+                <h2>{{ $t(`${project.title}`) }}</h2>
+                <p>{{ $t(`${project.description}`) }}</p>
+                <div class="languages">
+                    <span
+                        v-for="language in project.languages"
+                        class="language"
+                    >
+                        <img :src="`/languages/${language}`" :alt="language" />
+                    </span>
                 </div>
                 <div class="social-media">
-                    <!-- <a
-                        v-for="social in portfolio.socialMedia"
-                        :key="social.name"
-                        :href="social.url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i :class="social.icon"></i>
-                    </a> -->
                     <a href="https://github.com/ysimard94" target="_blank"
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +85,16 @@ export default {
 .social-media {
     display: flex;
     gap: 1rem;
+}
+
+.languages {
+    display: flex;
+    gap: 1rem;
+}
+
+.language img {
+    height: 32px;
+    width: 32px;
 }
 
 h2 {
