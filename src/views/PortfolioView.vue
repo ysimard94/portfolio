@@ -1,14 +1,14 @@
 <script>
-import projectsJSON from '../assets/projects.json'
+import projectsJSON from '../assets/projects.json';
 
 export default {
     name: 'PortfolioView',
     data() {
         return {
             projects: projectsJSON,
-        }
+        };
     },
-}
+};
 </script>
 
 <template>
@@ -141,16 +141,35 @@ export default {
     transition: 200ms;
 }
 
+@keyframes boucing {
+    0%,
+    40% {
+        transform: translateY(0);
+    }
+    25%,
+    65% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .tooltip::after {
     content: ' ';
     position: absolute;
     top: 100%; /* At the bottom of the tooltip */
     left: 50%;
-    margin-top: 2px;
+    margin-top: 3px;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: hsl(0, 0%, 65%) transparent transparent transparent;
+}
+
+.language:hover .tooltip::after,
+.language:focus-visible .tooltip::after {
+    animation: boucing 1000ms infinite;
 }
 
 .language:hover .tooltip,

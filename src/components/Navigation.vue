@@ -1,7 +1,7 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import { useThemeStore } from "@/store/ThemeStore";
-import { useLocaleStore } from "@/store/LocaleStore";
+import { RouterLink } from 'vue-router';
+import { useThemeStore } from '@/store/ThemeStore';
+import { useLocaleStore } from '@/store/LocaleStore';
 
 const themeStore = useThemeStore();
 const localeStore = useLocaleStore();
@@ -75,16 +75,17 @@ const localeStore = useLocaleStore();
             </div>
             <nav>
                 <RouterLink to="/" active-class="active">{{
-                    $t("nav.home")
-                }}</RouterLink>
-                <RouterLink to="/about" active-class="active">{{
-                    $t("nav.about")
+                    $t('nav.home')
                 }}</RouterLink>
                 <RouterLink to="/portfolio" active-class="active">{{
-                    $t("nav.portfolio")
+                    $t('nav.portfolio')
                 }}</RouterLink>
+                <RouterLink to="/about" active-class="active">{{
+                    $t('nav.about')
+                }}</RouterLink>
+
                 <RouterLink to="/contact" active-class="active">{{
-                    $t("nav.contact")
+                    $t('nav.contact')
                 }}</RouterLink>
             </nav>
         </div>
@@ -141,7 +142,7 @@ nav a {
 }
 
 nav a:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
