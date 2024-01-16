@@ -273,12 +273,14 @@ nav a:focus-visible {
     }
 
     .wrapper {
+        position: absolute;
         opacity: 0;
         visibility: hidden;
         align-items: center;
         justify-content: center;
         background-color: var(--background-color-nav);
         height: calc(100vh - 64px);
+        margin-top: 64px;
         transform: translateY(-24px);
         transition: 200ms;
     }
