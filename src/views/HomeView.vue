@@ -6,9 +6,9 @@
             <img src="../assets/mickey.png" alt="Profile picture" />
         </div>
         <div class="content">
-            <h1>{{ $t("home.title") }}</h1>
+            <h1>{{ $t('home.title') }}</h1>
             <p>
-                {{ $t("home.message") }} Lorem ipsum dolor sit amet consectetur
+                {{ $t('home.message') }} Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Tempora, doloribus dolor ad numquam fugit
                 pariatur.
             </p>
@@ -104,5 +104,11 @@ p {
 a:hover,
 a:focus-visible {
     animation: bounce 1s infinite;
+}
+
+@media (max-width: 600px) {
+    section {
+        flex-direction: column;
+    }
 }
 </style>

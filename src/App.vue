@@ -96,6 +96,12 @@ main {
     margin-top: 2rem;
 }
 
+@media (max-width: 950px) {
+    .container {
+        grid-template-columns: 300px 1fr;
+    }
+}
+
 @media (max-width: 800px) {
     .container {
         grid-template-columns: 1fr;

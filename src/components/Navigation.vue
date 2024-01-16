@@ -143,6 +143,7 @@ const closeMenu = () => {
 
 <style scoped>
 header {
+    display: grid;
     position: sticky;
     top: 0;
     height: 100svh;
@@ -185,7 +186,7 @@ button {
     display: grid;
     height: calc(100% - 64px);
     width: 100%;
-    align-items: center;
+    margin-block: auto;
     padding-left: 75px;
 }
 
@@ -251,6 +252,7 @@ nav a:focus-visible {
     nav {
         width: max-content;
         margin-right: 75px;
+        font-size: 1.5rem;
     }
 
     .settings {
