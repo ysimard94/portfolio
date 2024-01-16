@@ -278,7 +278,7 @@ nav a:focus-visible {
         align-items: center;
         justify-content: center;
         background-color: var(--background-color-nav);
-        height: 100vh;
+        height: calc(100vh - 64px);
         transform: translateY(-24px);
         transition: 200ms;
     }
