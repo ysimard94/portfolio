@@ -13,7 +13,7 @@ export default {
 
 <template>
     <section>
-        <h1>This is a portfolio page</h1>
+        <h2>{{ $t('portfolio.title') }}</h2>
         <div v-for="project in projects" class="project">
             <div class="preview-image">
                 <img
@@ -83,7 +83,7 @@ export default {
     gap: 2rem;
 }
 
-.project + .project {
+section > * + * {
     margin-top: 2rem;
 }
 
@@ -164,7 +164,7 @@ export default {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: hsl(0, 0%, 65%) transparent transparent transparent;
+    border-color: var(--accent-color) transparent transparent transparent;
 }
 
 .language:hover .tooltip::after,

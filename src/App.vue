@@ -1,12 +1,12 @@
 <script setup>
-import Navigation from './components/Navigation.vue'
-import { RouterLink, RouterView } from 'vue-router'
-import { useThemeStore } from './store/ThemeStore'
+import Navigation from './components/Navigation.vue';
+import { RouterLink, RouterView } from 'vue-router';
+import { useThemeStore } from './store/ThemeStore';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 if (localStorage.getItem('theme') === null) {
-    localStorage.setItem('theme', 'dark-theme')
+    localStorage.setItem('theme', 'dark-theme');
 }
 </script>
 
@@ -34,6 +34,7 @@ if (localStorage.getItem('theme') === null) {
     --background-color-nav: hsl(0, 0%, 7%);
     --background-color-secondary: #41b883;
     --background-color-tooltip: hsl(0, 0%, 85%);
+    --accent-color: hsl(343, 100%, 64%);
     --color-tooltip: hsl(211, 28%, 29%);
     --color-primary: #fff;
     --color-secondary: #35495e;
@@ -71,6 +72,7 @@ main {
     display: grid;
     align-items: center;
     margin: auto;
+    padding-block: 100px;
     padding-inline: 2rem;
     max-width: 850px;
 }

@@ -1,17 +1,13 @@
 @import './base.css';
 
-
 a {
-  color: inherit;
-  text-decoration: none;
-  transition: 0.4s;
-  padding: 3px;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.4s;
 }
 
-
 @media (min-width: 1024px) {
-
-  #app {
-    display: flex;
-  }
+    #app {
+        display: flex;
+    }
 }

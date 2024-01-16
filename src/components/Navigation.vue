@@ -137,6 +137,7 @@ button {
 nav a {
     display: block;
     position: relative;
+    padding: 4px 8px;
     transition: 300ms;
     z-index: 2;
 }
@@ -148,7 +149,7 @@ nav a:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: hsl(343, 100%, 64%);
+    background: var(--accent-color);
     transition: 250ms;
     transform-origin: left;
     transform: scaleX(0);
