@@ -77,12 +77,6 @@ main {
     max-width: 850px;
 }
 
-.wrapper {
-    position: sticky;
-    bottom: 0;
-    height: 100svh;
-}
-
 /*------------- View animation  --------------*/
 
 .slide-enter-active,
@@ -98,27 +92,18 @@ main {
     transform: translateX(10%);
 }
 
-@media (min-width: 1024px) {
-    .settings {
-        margin-top: 2rem;
+.settings {
+    margin-top: 2rem;
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
     }
 
-    .wrapper {
-        position: sticky;
-        top: 0;
-        display: grid;
-        height: 100svh;
-        width: 100%;
-        padding-left: 75px;
-    }
-
-    nav {
-        display: grid;
-        height: fit-content;
-        width: fit-content;
-        text-align: left;
-        padding-bottom: 2rem;
-        font-size: 1.125rem;
+    main {
+        padding-block: 2rem;
     }
 }
 </style>

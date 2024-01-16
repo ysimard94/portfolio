@@ -80,6 +80,7 @@ export default {
 <style scoped>
 .project {
     display: flex;
+    min-width: 200px;
     gap: 2rem;
 }
 
@@ -198,5 +199,11 @@ a > * {
     width: 32px;
     height: 32px;
     color: var(--color-text);
+}
+
+@media (max-width: 1100px) {
+    .project {
+        flex-direction: column;
+    }
 }
 </style>
