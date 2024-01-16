@@ -112,32 +112,37 @@ const closeMenu = () => {
                 </svg>
             </button>
         </div>
-        <div class="wrapper" :class="{ 'menu-open': menuOpen }">
-            <nav>
-                <RouterLink to="/" active-class="active" @click="closeMenu()">{{
-                    $t('nav.home')
-                }}</RouterLink>
-                <RouterLink
-                    to="/portfolio"
-                    active-class="active"
-                    @click="closeMenu()"
-                    >{{ $t('nav.portfolio') }}</RouterLink
-                >
-                <RouterLink
-                    to="/about"
-                    active-class="active"
-                    @click="closeMenu()"
-                    >{{ $t('nav.about') }}</RouterLink
-                >
+        <transition name="slide" mode="out-in">
+            <div class="wrapper" :class="{ 'menu-open': menuOpen }">
+                <nav>
+                    <RouterLink
+                        to="/"
+                        active-class="active"
+                        @click="closeMenu()"
+                        >{{ $t('nav.home') }}</RouterLink
+                    >
+                    <RouterLink
+                        to="/portfolio"
+                        active-class="active"
+                        @click="closeMenu()"
+                        >{{ $t('nav.portfolio') }}</RouterLink
+                    >
+                    <RouterLink
+                        to="/about"
+                        active-class="active"
+                        @click="closeMenu()"
+                        >{{ $t('nav.about') }}</RouterLink
+                    >
 
-                <RouterLink
-                    to="/contact"
-                    active-class="active"
-                    @click="closeMenu()"
-                    >{{ $t('nav.contact') }}</RouterLink
-                >
-            </nav>
-        </div>
+                    <RouterLink
+                        to="/contact"
+                        active-class="active"
+                        @click="closeMenu()"
+                        >{{ $t('nav.contact') }}</RouterLink
+                    >
+                </nav>
+            </div>
+        </transition>
     </header>
 </template>
 
@@ -156,6 +161,7 @@ header {
     justify-items: center;
     justify-content: space-between;
     padding-inline: 75px;
+    padding-block: 2rem;
 }
 
 .settings button {
@@ -184,7 +190,7 @@ button {
 
 .wrapper {
     display: grid;
-    height: calc(100% - 64px);
+    height: calc(100%);
     width: 100%;
     margin-block: auto;
     padding-left: 75px;
@@ -244,8 +250,8 @@ nav a:focus-visible {
 @media (max-width: 800px) {
     header {
         position: sticky;
+        height: 64px;
         top: 0;
-        height: 96px;
         width: 100%;
     }
 
@@ -256,6 +262,7 @@ nav a:focus-visible {
     }
 
     .settings {
+        padding-block: 1rem;
         gap: 8px;
         justify-content: start;
         padding-inline: 32px;
@@ -266,11 +273,14 @@ nav a:focus-visible {
     }
 
     .wrapper {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
         align-items: center;
         justify-content: center;
         background-color: var(--background-color-nav);
         height: 100vh;
+        transform: translateY(-24px);
+        transition: 200ms;
     }
 
     .hamburger-menu {
@@ -278,7 +288,9 @@ nav a:focus-visible {
     }
 
     .menu-open {
-        display: grid;
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
     }
 }
 </style>

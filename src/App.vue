@@ -92,10 +92,6 @@ main {
     transform: translateX(10%);
 }
 
-.settings {
-    margin-top: 2rem;
-}
-
 @media (max-width: 950px) {
     .container {
         grid-template-columns: 300px 1fr;
