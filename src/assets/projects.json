@@ -55,5 +55,21 @@
             }
         ],
         "github": "https://github.com/ysimard94/stampee"
+    },
+    {
+        "title": "portfolio.projects.weather.title",
+        "description": "portfolio.projects.weather.description",
+        "image": {
+            "src": "mick.webp",
+            "alt": "portfolio.projects.weather.alt"
+        },
+        "languages": [
+            {
+                "src": "javascript-svgrepo-com.svg",
+                "alt": "Javascript"
+            }
+        ],
+        "github": "https://github.com/ysimard94/SPA-weather-app/",
+        "link": "https://spa-weather-app.adaptable.app/"
     }
 ]
