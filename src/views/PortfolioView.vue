@@ -123,10 +123,14 @@ section > * + * {
 
 .language {
     position: relative;
-    width: 32px;
     color: var(--color-text);
     background-color: var(--background-color);
     border: transparent;
+}
+
+.language img,
+.language svg {
+    height: 32px;
 }
 
 .tooltip {
