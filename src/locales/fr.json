@@ -29,6 +29,11 @@
                 "title": "Stampee",
                 "description": "Un site d'enchère où l'utilisateur peut gérer et miser sur des enchères de timbres.",
                 "alt": "Image du site Stampee."
+            },
+            "weather": {
+                "title": "Application météo",
+                "description": "Une application à page unique simple pour consulter la météo d'une ville en utilisant l'API de OpenWeatherMap.",
+                "alt": "Image de l'application météo."
             }
         }
     },

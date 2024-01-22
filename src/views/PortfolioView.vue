@@ -57,7 +57,10 @@ export default {
                     </button>
                 </div>
                 <div class="social-media">
-                    <a :href="project.github" target="_blank"
+                    <a :href="project.link" v-if="project.link" target="_blank"
+                        >Live project</a
+                    >
+                    <a :href="project.github" target="_blank" class="github-btn"
                         ><span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -127,10 +130,14 @@ section > * + * {
 
 .language {
     position: relative;
-    width: 32px;
     color: var(--color-text);
     background-color: var(--background-color);
     border: transparent;
+}
+
+.language img,
+.language svg {
+    height: 32px;
 }
 
 .tooltip {
@@ -202,7 +209,7 @@ svg {
     max-height: 32px;
 }
 
-a {
+.github-btn {
     display: flex;
     align-items: center;
     color: var(--color-text);
@@ -214,7 +221,7 @@ a {
     transition: max-width 400ms ease-in-out;
 }
 
-a span:nth-child(2) {
+.github-btn span:nth-child(2) {
     /* color: hsl(0, 0%, 90%);
     background-color: var(--accent-color); */
     border-radius: 60px;
@@ -222,8 +229,8 @@ a span:nth-child(2) {
     white-space: nowrap;
 }
 
-a:hover,
-a:focus-visible {
+.github-btn:hover,
+.github-btn:focus-visible {
     max-width: 100%;
 }
 
@@ -237,6 +244,7 @@ a:focus-visible {
 .arrow i {
     animation: arrow 1s infinite;
 }
+
 @keyframes arrow {
     0% {
         transform: translateX(0) rotate(-45deg);

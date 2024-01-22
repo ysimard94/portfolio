@@ -29,6 +29,11 @@
                 "title": "Stampee",
                 "description": "An auctionning website where you can create auctions and bid on stamps.",
                 "alt": "Image of the Stampee website."
+            },
+            "weather": {
+                "title": "Weather app",
+                "description": "A simple single page application to get the weather forecast of a city using the OpenWeatherMap API.",
+                "alt": "Image of the Weather app."
             }
         }
     },
