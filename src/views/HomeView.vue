@@ -3,12 +3,54 @@
 <template>
     <section>
         <div class="profile-picture">
-            <img src="../assets/mickey.png" alt="Profile picture" />
+            <svg
+                id="visual"
+                viewBox="0 0 350 400"
+                width="350"
+                height="350"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+            >
+                <defs>
+                    <pattern
+                        id="pattern"
+                        x="0"
+                        y="0"
+                        width="1"
+                        height="1"
+                        patternContentUnits="objectBoundingBox"
+                    >
+                        <image
+                            x="0"
+                            y="0"
+                            width="1"
+                            height="1"
+                            preserveAspectRatio="xMidYMid slice"
+                            xlink:href="/mickey.png"
+                        ></image>
+                    </pattern>
+                </defs>
+                <g transform="translate(170.71605306085428 191.58515326718145)">
+                    <path
+                        id="shape1"
+                        fill="url(#pattern)"
+                        d="M111.1 -111.8C135.9 -86.3 142.5 -43.1 138.5 -4C134.5 35.1 119.9 70.2 95.1 105.7C70.2 141.2 35.1 177.1 -4.4 181.5C-43.8 185.8 -87.7 158.7 -124.1 123.2C-160.6 87.7 -189.7 43.8 -183.9 5.8C-178.1 -32.2 -137.4 -64.5 -100.9 -90C-64.5 -115.5 -32.2 -134.2 5.5 -139.7C43.1 -145.1 86.3 -137.3 111.1 -111.8;"
+                    >
+                        <animate
+                            attributeName="d"
+                            dur="100ms"
+                            repeatCount="indefinite"
+                            values="M96 -100.9C127.5 -64.5 158.2 -32.2 160.1 1.9C162.1 36.1 135.1 72.1 103.6 101.3C72.1 130.5 36.1 152.7 0.7 152C-34.6 151.3 -69.3 127.6 -97 98.5C-124.6 69.3 -145.3 34.6 -150.4 -5.1C-155.5 -44.8 -144.9 -89.6 -117.2 -126C-89.6 -162.5 -44.8 -190.6 -6.3 -184.3C32.2 -178.1 64.5 -137.4 96 -100.9; M111.1 -111.8C135.9 -86.3 142.5 -43.1 138.5 -4C134.5 35.1 119.9 70.2 95.1 105.7C70.2 141.2 35.1 177.1 -4.4 181.5C-43.8 185.8 -87.7 158.7 -124.1 123.2C-160.6 87.7 -189.7 43.8 -183.9 5.8C-178.1 -32.2 -137.4 -64.5 -100.9 -90C-64.5 -115.5 -32.2 -134.2 5.5 -139.7C43.1 -145.1 86.3 -137.3 111.1 -111.8; M96 -100.9C127.5 -64.5 158.2 -32.2 160.1 1.9C162.1 36.1 135.1 72.1 103.6 101.3C72.1 130.5 36.1 152.7 0.7 152C-34.6 151.3 -69.3 127.6 -97 98.5C-124.6 69.3 -145.3 34.6 -150.4 -5.1C-155.5 -44.8 -144.9 -89.6 -117.2 -126C-89.6 -162.5 -44.8 -190.6 -6.3 -184.3C32.2 -178.1 64.5 -137.4 96 -100.9"
+                        />
+                    </path>
+                </g>
+            </svg>
         </div>
         <div class="content">
-            <h1>{{ $t('home.title') }}</h1>
+            <h1>{{ $t("home.title") }}</h1>
             <p>
-                {{ $t('home.message') }} Lorem ipsum dolor sit amet consectetur
+                {{ $t("home.message") }} Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Tempora, doloribus dolor ad numquam fugit
                 pariatur.
             </p>
@@ -74,14 +116,9 @@ p {
 }
 
 .profile-picture {
-    min-width: 150px;
-    max-width: 250px;
+    width: 100%;
+    min-width: 350px;
 }
-
-.profile-picture img {
-    border-radius: 40%;
-}
-
 .content {
     display: grid;
     gap: 1rem;
