@@ -1,12 +1,12 @@
 <script setup>
-import Navigation from './components/Navigation.vue';
-import { RouterLink, RouterView } from 'vue-router';
-import { useThemeStore } from './store/ThemeStore';
+import Navigation from "./components/Navigation.vue";
+import { RouterLink, RouterView } from "vue-router";
+import { useThemeStore } from "./store/ThemeStore";
 
 const themeStore = useThemeStore();
 
-if (localStorage.getItem('theme') === null) {
-    localStorage.setItem('theme', 'dark-theme');
+if (localStorage.getItem("theme") === null) {
+    localStorage.setItem("theme", "dark-theme");
 }
 </script>
 

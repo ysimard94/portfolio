@@ -14,7 +14,11 @@ export default {
 <template>
     <section>
         <h2>{{ $t("portfolio.title") }}</h2>
-        <div v-for="project in projects" class="project">
+        <div
+            v-for="(project, index) in projects"
+            class="project"
+            :style="{ 'animation-delay': `${index * 100}ms` }"
+        >
             <div class="preview-image">
                 <img
                     :src="`/projects/${project.image.src}`"
@@ -53,7 +57,7 @@ export default {
                             />
                         </svg>
 
-                        <span class="tooltip">{{ language.alt }}</span>
+                        <span class="tooltip">{{ language.alt }} </span>
                     </button>
                 </div>
                 <div class="social-media">
@@ -92,6 +96,14 @@ export default {
     display: flex;
     min-width: 200px;
     gap: 2rem;
+    opacity: 0;
+    animation: fadeIn 500ms ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 section > * + * {

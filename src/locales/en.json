@@ -6,8 +6,9 @@
         "contact": "Contact"
     },
     "home": {
-        "title": "Yannick Simard",
-        "subtitle": "Fullstack developer",
+        "firstname": "Yannick",
+        "lastname": "Simard",
+        "title": "Full-stack developer",
         "message": "I'm a full-stack web developer based in Montréal, Québec."
     },
     "portfolio": {

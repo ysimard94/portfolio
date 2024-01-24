@@ -63,12 +63,20 @@
         </div>
 
         <div class="content">
-            <h1>{{ $t("home.title") }}</h1>
+            <h1>
+                <span>
+                    {{ $t("home.firstname") }}
+                </span>
+                <span>
+                    {{ $t("home.lastname") }}
+                </span>
+            </h1>
             <p>
-                {{ $t("home.message") }} Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Tempora, doloribus dolor ad numquam fugit
-                pariatur.
+                {{ $t("home.message") }}
             </p>
+            <RouterLink to="/portfolio" class="call-to-action">
+                See my projects
+            </RouterLink>
             <div class="social-media">
                 <a href="https://github.com/ysimard94" target="_blank"
                     ><svg
@@ -104,6 +112,66 @@
 </template>
 
 <style scoped>
+.call-to-action {
+    position: relative;
+    width: fit-content;
+    padding: 0.5rem;
+    border: 2px solid var(--color-text);
+    border-radius: 5px;
+    font-weight: 600;
+    color: inherit;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.call-to-action:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: 250ms;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    z-index: -1;
+}
+
+.call-to-action:hover:before,
+.call-to-action:focus-visible:before {
+    transition: transform 250ms;
+    transform: scaleY(1);
+}
+
+/* ----- General ----- */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+}
+
+h1 {
+    font-family: Yantramanav;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+h1 span {
+    display: block;
+}
+
+p {
+    max-width: 35ch;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+/* ----- Profile picture ----- */
 .mask-container {
     display: flex;
     align-items: center;
@@ -130,32 +198,7 @@
     overflow: visible;
 }
 
-h1 {
-    font-family: Yantramanav;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 1.2;
-}
-
-a > * {
-    width: 32px;
-    height: 32px;
-    color: var(--color-text);
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    gap: 1rem;
-}
-
-p {
-    line-height: 1.75;
-    font-style: italic;
-}
+/* ----- Content ----- */
 
 .content {
     display: grid;
@@ -167,9 +210,15 @@ p {
     gap: 0.25rem;
 }
 
-a:hover,
-a:focus-visible {
+.social-media a:hover,
+.social-media a:focus-visible {
     transform: translateY(-5px);
+}
+
+.social-media a > * {
+    width: 32px;
+    height: 32px;
+    color: var(--color-text);
 }
 
 @media (min-width: 1120px) {
