@@ -61,7 +61,11 @@ export default {
                     </button>
                 </div>
                 <div class="social-media">
-                    <a :href="project.link" v-if="project.link" target="_blank"
+                    <a
+                        :href="project.link"
+                        v-if="project.link"
+                        target="_blank"
+                        class="call-to-action"
                         >Live project</a
                     >
                     <a :href="project.github" target="_blank" class="github-btn"
@@ -153,6 +157,7 @@ svg {
 
 .social-media {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 

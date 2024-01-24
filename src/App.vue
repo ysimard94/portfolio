@@ -77,6 +77,45 @@ main {
     max-width: 850px;
 }
 
+/* ----- Call to action button ------ */
+
+.call-to-action {
+    position: relative;
+    width: fit-content;
+    padding: 0.5rem;
+    border: 2px solid var(--color-text);
+    border-radius: 5px;
+    font-weight: 600;
+    color: inherit;
+    background-color: inherit;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+}
+
+.call-to-action:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: 250ms;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    z-index: -1;
+}
+
+.call-to-action:hover:before,
+.call-to-action:focus-visible:before {
+    transition: transform 250ms;
+    transform: scaleY(1);
+}
+
+.call-to-action:hover {
+    color: white;
+}
+
 /*------------- View animation  --------------*/
 
 .slide-enter-active,
