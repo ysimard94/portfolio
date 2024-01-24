@@ -92,6 +92,24 @@ export default {
 </template>
 
 <style scoped>
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+section > h2 {
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.125rem;
+}
+
+svg {
+    max-width: 32px;
+    max-height: 32px;
+}
 .project {
     display: flex;
     min-width: 200px;
@@ -100,14 +118,18 @@ export default {
     animation: fadeIn 500ms ease-in forwards;
 }
 
+.project + .project {
+    margin-top: 8rem;
+}
+
+.project:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
-}
-
-section > * + * {
-    margin-top: 2rem;
 }
 
 .preview-image {
@@ -206,21 +228,6 @@ section > * + * {
     opacity: 1;
 }
 
-h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-p {
-    font-size: 1.125rem;
-}
-
-svg {
-    max-width: 32px;
-    max-height: 32px;
-}
-
 .github-btn {
     display: flex;
     align-items: center;
@@ -271,6 +278,14 @@ svg {
 
 @media (max-width: 1100px) {
     .project {
+        flex-direction: column;
+    }
+
+    .project + .project {
+        margin-top: 4rem;
+    }
+
+    .project:nth-child(odd) {
         flex-direction: column;
     }
 }
