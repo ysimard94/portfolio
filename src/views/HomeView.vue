@@ -4,7 +4,11 @@
     <section>
         <div class="profile-picture">
             <div class="mask-container">
-                <img src="/mickey.png" alt="" class="mask-image" />
+                <img
+                    src="../assets/profile-picture.png"
+                    alt=""
+                    class="mask-image"
+                />
                 <svg
                     viewBox="0 0 350 350"
                     width="350"
