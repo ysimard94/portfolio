@@ -71,12 +71,6 @@
                     {{ $t("home.lastname") }}
                 </span>
             </h1>
-            <p>
-                {{ $t("home.message") }}
-            </p>
-            <RouterLink to="/portfolio" class="call-to-action">
-                See my projects
-            </RouterLink>
             <div class="social-media">
                 <a href="https://github.com/ysimard94" target="_blank"
                     ><svg
@@ -107,6 +101,12 @@
                         ></path></svg
                 ></a>
             </div>
+            <p>
+                {{ $t("home.message") }}
+            </p>
+            <RouterLink to="/portfolio" class="call-to-action">
+                See my projects
+            </RouterLink>
         </div>
     </section>
 </template>
