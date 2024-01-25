@@ -72,8 +72,7 @@ main {
     display: grid;
     align-items: center;
     margin: auto;
-    padding-block: 100px;
-    padding-inline: 2rem;
+    padding: 4rem 2rem;
     max-width: 850px;
     width: 100%;
 }
@@ -95,7 +94,7 @@ h2 {
 .title {
     border-top: 2px solid var(--accent-color);
     border-bottom: 2px solid var(--accent-color);
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .title > h1 {
@@ -175,6 +174,11 @@ h2 {
 
     main {
         padding-block: 2rem;
+        padding-inline: 1rem;
+    }
+
+    .title {
+        margin-block: 0.5rem 3rem;
     }
 }
 </style>

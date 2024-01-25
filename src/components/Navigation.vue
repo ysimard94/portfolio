@@ -1,8 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-import { useThemeStore } from '@/store/ThemeStore';
-import { useLocaleStore } from '@/store/LocaleStore';
-import { ref } from 'vue';
+import { RouterLink } from "vue-router";
+import { useThemeStore } from "@/store/ThemeStore";
+import { useLocaleStore } from "@/store/LocaleStore";
+import { ref } from "vue";
 
 const themeStore = useThemeStore();
 const localeStore = useLocaleStore();
@@ -119,26 +119,26 @@ const closeMenu = () => {
                         to="/"
                         active-class="active"
                         @click="closeMenu()"
-                        >{{ $t('nav.home') }}</RouterLink
+                        >{{ $t("nav.home") }}</RouterLink
                     >
                     <RouterLink
                         to="/portfolio"
                         active-class="active"
                         @click="closeMenu()"
-                        >{{ $t('nav.portfolio') }}</RouterLink
+                        >{{ $t("nav.portfolio") }}</RouterLink
                     >
                     <RouterLink
                         to="/about"
                         active-class="active"
                         @click="closeMenu()"
-                        >{{ $t('nav.about') }}</RouterLink
+                        >{{ $t("nav.about") }}</RouterLink
                     >
 
                     <RouterLink
                         to="/contact"
                         active-class="active"
                         @click="closeMenu()"
-                        >{{ $t('nav.contact') }}</RouterLink
+                        >{{ $t("nav.contact") }}</RouterLink
                     >
                 </nav>
             </div>
@@ -213,7 +213,7 @@ nav a {
 }
 
 nav a:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -262,10 +262,9 @@ nav a:focus-visible {
     }
 
     .settings {
-        padding-block: 1rem;
         gap: 8px;
         justify-content: start;
-        padding-inline: 32px;
+        padding: 0 2rem;
     }
 
     .settings button:first-child {
