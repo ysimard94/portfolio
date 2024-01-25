@@ -14,31 +14,18 @@
                 </label>
             </p>
             <p>
-                <label
-                    >Name <input v-model="form.name" type="text" name="name"
-                /></label>
+                <label>Name <input type="text" name="name" /></label>
             </p>
             <p>
-                <label
-                    >Email
-                    <input v-model="form.email" type="email" name="email"
-                /></label>
+                <label>Email <input type="email" name="email" /></label>
             </p>
             <p>
-                <label
-                    >Subject
-                    <input v-model="form.subject" type="text" name="subject"
-                /></label>
+                <label>Subject <input type="text" name="subject" /></label>
             </p>
             <p>
                 <label
                     >Message
-                    <textarea
-                        v-model="form.message"
-                        type="text"
-                        name="message"
-                        rows="2"
-                    />
+                    <textarea type="text" name="message" rows="2" />
                 </label>
             </p>
             <p>
