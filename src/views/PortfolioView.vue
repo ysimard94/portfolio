@@ -33,7 +33,7 @@ export default {
             <div class="gabagool">
                 <div class="preview-image">
                     <img
-                        :src="`/projects/${project.image.src}`"
+                        :src="`/projects/${project.image.src}.png`"
                         :alt="$t(`${project.image.alt}`)"
                     />
                 </div>
@@ -131,16 +131,15 @@ p {
 
 .preview-image {
     position: inherit;
-    height: 300px;
+    height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
 .preview-image img {
     position: absolute;
+    min-height: 100%;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     transition: all 200ms ease-in-out;
 }
 

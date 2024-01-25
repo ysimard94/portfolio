@@ -86,6 +86,12 @@ h1 {
     line-height: 1.2;
 }
 
+h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
 .title {
     border-top: 2px solid var(--accent-color);
     border-bottom: 2px solid var(--accent-color);

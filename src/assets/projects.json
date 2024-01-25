@@ -3,7 +3,7 @@
         "title": "portfolio.projects.cantina.title",
         "description": "portfolio.projects.cantina.description",
         "image": {
-            "src": "mick.webp",
+            "src": "cantina",
             "alt": "portfolio.projects.cantina.alt"
         },
         "languages": [
@@ -26,7 +26,7 @@
         "title": "portfolio.projects.art-montreal.title",
         "description": "portfolio.projects.art-montreal.description",
         "image": {
-            "src": "mick.webp",
+            "src": "oeuvres-mtl",
             "alt": "portfolio.projects.art-montreal.alt"
         },
         "languages": [
@@ -41,7 +41,7 @@
         "title": "portfolio.projects.stampee.title",
         "description": "portfolio.projects.stampee.description",
         "image": {
-            "src": "mick.webp",
+            "src": "stampee",
             "alt": "portfolio.projects.stampee.alt"
         },
         "languages": [
@@ -60,7 +60,7 @@
         "title": "portfolio.projects.weather.title",
         "description": "portfolio.projects.weather.description",
         "image": {
-            "src": "mick.webp",
+            "src": "weather-app",
             "alt": "portfolio.projects.weather.alt"
         },
         "languages": [
