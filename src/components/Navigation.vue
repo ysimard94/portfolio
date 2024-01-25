@@ -263,6 +263,7 @@ nav a:focus-visible {
 
     .settings {
         gap: 8px;
+        align-items: center;
         justify-content: start;
         padding: 0 2rem;
     }
