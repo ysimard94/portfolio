@@ -19,11 +19,13 @@ export default {
             class="project"
             :style="{ 'animation-delay': `${index * 100}ms` }"
         >
-            <div class="preview-image">
-                <img
-                    :src="`/projects/${project.image.src}`"
-                    :alt="$t(`${project.image.alt}`)"
-                />
+            <div class="gabagool">
+                <div class="preview-image">
+                    <img
+                        :src="`/projects/${project.image.src}`"
+                        :alt="$t(`${project.image.alt}`)"
+                    />
+                </div>
             </div>
             <div class="content">
                 <h2>{{ $t(`${project.title}`) }}</h2>
@@ -60,7 +62,7 @@ export default {
                         <span class="tooltip">{{ language.alt }} </span>
                     </button>
                 </div>
-                <div class="social-media">
+                <div class="project-links">
                     <a
                         :href="project.link"
                         v-if="project.link"
@@ -130,21 +132,48 @@ svg {
     flex-direction: row-reverse;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.project:hover .preview-image img {
+    transform: scale(1.05);
 }
 
-.preview-image {
+.gabagool {
+    position: relative;
     height: 300px;
     min-width: 300px;
 }
 
+.preview-image {
+    position: inherit;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
 .preview-image img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 200ms ease-in-out;
+}
+
+.gabagool::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: transform 200ms ease-in-out;
+    transform: translate(0);
+}
+
+.project:hover .gabagool::before {
+    transform: translate(-10px, 10px);
+}
+.project:hover:nth-child(odd) .gabagool::before {
+    transform: translate(10px, 10px);
 }
 
 .content {
@@ -155,11 +184,7 @@ svg {
     min-height: 100%;
 }
 
-.social-media {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
+/* ----- Technologies used section ------ */
 
 .languages {
     display: flex;
@@ -195,20 +220,6 @@ svg {
     transition: 200ms;
 }
 
-@keyframes boucing {
-    0%,
-    40% {
-        transform: translateY(0);
-    }
-    25%,
-    65% {
-        transform: translateY(2px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
 .tooltip::after {
     content: " ";
     position: absolute;
@@ -221,9 +232,20 @@ svg {
     border-color: var(--accent-color) transparent transparent transparent;
 }
 
+.arrow i {
+    border: solid var(--color-text);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow i {
+    animation: arrow 1s infinite;
+}
+
 .language:hover .tooltip::after,
 .language:focus-visible .tooltip::after {
-    animation: boucing 1000ms infinite;
+    animation: bouncing 1000ms infinite;
 }
 
 .language:hover .tooltip,
@@ -231,6 +253,14 @@ svg {
     bottom: calc(100% + 0.75rem);
     visibility: visible;
     opacity: 1;
+}
+
+/* ----- Project links section ----- */
+
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .github-btn {
@@ -246,8 +276,6 @@ svg {
 }
 
 .github-btn span:nth-child(2) {
-    /* color: hsl(0, 0%, 90%);
-    background-color: var(--accent-color); */
     border-radius: 60px;
     padding-inline: 4px;
     white-space: nowrap;
@@ -258,15 +286,26 @@ svg {
     max-width: 100%;
 }
 
-.arrow i {
-    border: solid var(--color-text);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
+/* ---- Animations ----- */
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
-.arrow i {
-    animation: arrow 1s infinite;
+@keyframes bouncing {
+    0%,
+    40% {
+        transform: translateY(0);
+    }
+    25%,
+    65% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes arrow {
