@@ -1,6 +1,11 @@
 <template>
     <section>
-        <form name="contact" method="POST" netlify>
+        <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            onsubmit="submit"
+        >
             <p>
                 <label>Name <input type="text" name="name" /></label>
             </p>
