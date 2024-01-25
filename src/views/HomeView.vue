@@ -105,7 +105,7 @@
                 {{ $t("home.message") }}
             </p>
             <RouterLink to="/portfolio" class="call-to-action">
-                See my projects
+                {{ $t("home.callToAction") }}
             </RouterLink>
         </div>
     </section>

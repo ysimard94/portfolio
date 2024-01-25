@@ -1,7 +1,7 @@
 <script>
 import projectsJSON from "../assets/projects.json";
-import NodeJS from "@/components/icons/NodeJS.vue";
-import Php from "@/components/icons/PHP.vue";
+import NodeJS from "@/components/icons/IconNodeJS.vue";
+import Php from "@/components/icons/IconPhp.vue";
 
 export default {
     name: "PortfolioView",

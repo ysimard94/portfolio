@@ -9,7 +9,8 @@
         "firstname": "Yannick",
         "lastname": "Simard",
         "title": "Full-stack developer",
-        "message": "I'm a full-stack web developer based in Montréal, Québec."
+        "message": "I'm a full-stack web developer based in Montréal, Québec.",
+        "callToAction": "See my portfolio"
     },
     "portfolio": {
         "title": "Portfolio",
