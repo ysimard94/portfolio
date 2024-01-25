@@ -45,6 +45,7 @@ export default {
             method="POST"
             netlify-honeypot="bot-field"
             data-netlify="true"
+            class="contact-form"
         >
             <p class="hidden">
                 <label>
@@ -52,42 +53,74 @@ export default {
                     <input name="bot-field" />
                 </label>
             </p>
-            <p>
-                <label
-                    >Name <input v-model="form.name" type="text" name="name"
-                /></label>
-            </p>
-            <p>
-                <label
-                    >Email
-                    <input v-model="form.email" type="email" name="email"
-                /></label>
-            </p>
-            <p>
-                <label
-                    >Subject
-                    <input v-model="form.subject" type="text" name="subject"
-                /></label>
-            </p>
-            <p>
-                <label
-                    >Message
-                    <textarea
-                        v-model="form.message"
-                        type="text"
-                        name="message"
-                        rows="2"
-                    />
-                </label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
+
+            <label for="name">{{ $t("contact.form.name") }}</label>
+            <input v-model="form.name" type="text" name="name" id="name" />
+
+            <label for="email">{{ $t("contact.form.email") }}</label
+            ><input v-model="form.email" type="email" name="email" id="email" />
+
+            <label for="subject">{{ $t("contact.form.subject") }}</label>
+            <input
+                v-model="form.subject"
+                type="text"
+                name="subject"
+                id="subject"
+            />
+
+            <label for="message">{{ $t("contact.form.message") }}</label>
+            <textarea
+                v-model="form.message"
+                type="text"
+                name="message"
+                rows="4"
+                id="message"
+            />
+
+            <button type="submit" class="call-to-action">
+                {{ $t("contact.form.submit") }}
+            </button>
         </form>
     </section>
 </template>
 <style>
 .hidden {
     display: none;
+}
+
+.section {
+    display: flex;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 60ch;
+    width: 100%;
+    gap: 0.5rem;
+    margin-inline: auto;
+}
+
+.contact-form > *:not(p) {
+    width: 100%;
+}
+
+input + label,
+button {
+    margin-top: 1rem;
+}
+
+input,
+textarea {
+    border: 2px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: var(--accent-color) solid 2px;
+    outline-offset: 2px;
+    outline-style: groove;
 }
 </style>

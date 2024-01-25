@@ -39,6 +39,17 @@
             }
         }
     },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Contactez-moi!",
+        "form": {
+            "name": "Nom",
+            "email": "Courriel",
+            "subject": "Sujet",
+            "message": "Message",
+            "submit": "Soumettre"
+        }
+    },
     "notFound": {
         "title": "Page non trouvée",
         "message": "La page que vous avez demandée n'existe pas.",

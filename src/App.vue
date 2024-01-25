@@ -75,6 +75,7 @@ main {
     padding-block: 100px;
     padding-inline: 2rem;
     max-width: 850px;
+    width: 100%;
 }
 
 /* ----- Call to action button ------ */
@@ -112,7 +113,8 @@ main {
     transform: scaleY(1);
 }
 
-.call-to-action:hover {
+.call-to-action:hover,
+.call-to-action:focus-visible {
     color: white;
 }
 
