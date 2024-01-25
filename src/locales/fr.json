@@ -37,7 +37,8 @@
                 "description": "Une application à page unique simple pour consulter la météo d'une ville en utilisant l'API de OpenWeatherMap.",
                 "alt": "Image de l'application météo."
             }
-        }
+        },
+        "github-btn": "Voir le code"
     },
     "contact": {
         "title": "Contact",

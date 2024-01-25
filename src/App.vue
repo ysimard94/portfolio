@@ -78,13 +78,35 @@ main {
     width: 100%;
 }
 
+/* ------ Title of pages styling ----- */
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.title {
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.title > h1 {
+    letter-spacing: 16px;
+    font-family: Yantramanav;
+    text-transform: uppercase;
+    font-style: italic;
+    padding: 0.5rem 1rem;
+}
+
 /* ----- Call to action button ------ */
 
 .call-to-action {
     position: relative;
     width: fit-content;
     padding: 0.5rem;
-    border: 2px solid var(--color-text);
+    border: 2px solid var(--accent-color);
     border-radius: 5px;
     font-weight: 600;
     color: inherit;

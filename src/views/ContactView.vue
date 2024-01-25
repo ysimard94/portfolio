@@ -39,6 +39,9 @@ export default {
 </script>
 <template>
     <section>
+        <div class="title">
+            <h1>{{ $t("contact.title") }}</h1>
+        </div>
         <form
             @submit.prevent="handleSubmit"
             name="contact"
@@ -95,7 +98,6 @@ export default {
 .contact-form {
     display: flex;
     flex-direction: column;
-    max-width: 60ch;
     width: 100%;
     gap: 0.5rem;
     margin-inline: auto;
@@ -108,6 +110,11 @@ export default {
 input + label,
 button {
     margin-top: 1rem;
+}
+
+button[type="submit"] {
+    width: fit-content;
+    margin-left: auto;
 }
 
 input,

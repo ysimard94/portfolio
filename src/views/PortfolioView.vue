@@ -19,7 +19,11 @@ export default {
 
 <template>
     <section>
-        <h2>{{ $t("portfolio.title") }}</h2>
+        <div class="title">
+            <h1>
+                {{ $t("portfolio.title") }}
+            </h1>
+        </div>
 
         <div
             v-for="(project, index) in projects"
@@ -80,7 +84,7 @@ export default {
                             </svg>
                         </span>
                         <span>
-                            See more
+                            {{ $t("portfolio.github-btn") }}
                             <span class="arrow"> <i></i> </span
                         ></span>
                     </a>
@@ -91,16 +95,6 @@ export default {
 </template>
 
 <style scoped>
-h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-section > h2 {
-    margin-bottom: 2rem;
-}
-
 p {
     font-size: 1.125rem;
 }
