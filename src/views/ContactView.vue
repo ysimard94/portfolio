@@ -1,44 +1,7 @@
-<script>
-export default {
-    name: "ContactView",
-    data: () => ({
-        form: {
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        },
-    }),
-    methods: {
-        encode(data) {
-            return Object.keys(data)
-                .map(
-                    (key) =>
-                        `${encodeURIComponent(key)}=${encodeURIComponent(
-                            data[key],
-                        )}`,
-                )
-                .join("&");
-        },
-        handleSubmit() {
-            fetch("/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-urlencoded" },
-                body: this.encode({
-                    "form-name": "contact",
-                    ...this.form,
-                }),
-            })
-                .then(() => console.log("successfully sent"))
-                .catch((e) => console.error(e));
-        },
-    },
-};
-</script>
+<script></script>
 <template>
     <section>
         <form
-            @submit.prevent="handleSubmit"
             name="contact"
             method="POST"
             netlify-honeypot="bot-field"
