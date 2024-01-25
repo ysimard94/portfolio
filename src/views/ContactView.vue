@@ -1,24 +1,3 @@
-<script>
-export default {
-    name: "ContactView",
-    methods: {
-        encode(){
-
-        },
-        handleSubmit() {
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(new FormData(document.forms.contact)),
-            })
-                .then(() => {
-                    alert("Success!");
-                })
-                .catch((error) => alert(error)
-        },
-    },
-};
-</script>
 <template>
     <section>
         <form
