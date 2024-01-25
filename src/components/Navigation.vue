@@ -151,7 +151,7 @@ header {
     display: grid;
     position: sticky;
     top: 0;
-    height: 100svh;
+    height: 100dvh;
     background-color: var(--background-color-nav);
     z-index: 2;
 }
