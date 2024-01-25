@@ -50,6 +50,10 @@
                 "alt": "PHP"
             },
             {
+                "src": "symfony.svg",
+                "alt": "Symfony"
+            },
+            {
                 "src": "mysql-icon.svg",
                 "alt": "MySQL"
             }

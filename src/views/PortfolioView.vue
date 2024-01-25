@@ -2,6 +2,7 @@
 import projectsJSON from "../assets/projects.json";
 import NodeJS from "@/components/icons/IconNodeJS.vue";
 import Php from "@/components/icons/IconPhp.vue";
+import Symfony from "@/components/icons/IconSymfony.vue";
 
 export default {
     name: "PortfolioView",
@@ -13,6 +14,7 @@ export default {
     components: {
         NodeJS,
         Php,
+        Symfony,
     },
 };
 </script>
@@ -49,12 +51,15 @@ export default {
                         <img
                             v-if="
                                 language.alt != 'PHP' &&
-                                language.alt != 'NodeJS'
+                                language.alt != 'NodeJS' &&
+                                language.alt != 'Symfony'
                             "
                             :src="`/languages/${language.src}`"
                             :alt="language.alt"
                         />
                         <Php v-else-if="language.alt == 'PHP'" />
+
+                        <Symfony v-else-if="language.alt == 'Symfony'" />
                         <NodeJS v-else-if="language.alt == 'NodeJS'" />
                         <span class="tooltip">{{ language.alt }} </span>
                     </button>
