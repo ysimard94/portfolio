@@ -69,10 +69,12 @@ body {
 }
 
 main {
+    position: relative;
     display: grid;
     align-items: center;
     margin: auto;
     padding: 4rem 2rem;
+    height: 100%;
     max-width: 850px;
     width: 100%;
 }

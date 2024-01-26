@@ -1,4 +1,6 @@
 <script>
+import ResponseMessage from "@/components/ResponseMessage.vue";
+
 export default {
     name: "ContactView",
     data: () => ({
@@ -8,6 +10,9 @@ export default {
             subject: "",
             message: "",
         },
+        success: false,
+        error: false,
+        message: "",
     }),
     methods: {
         encode(data) {
@@ -31,10 +36,25 @@ export default {
                     ...this.form,
                 }),
             })
-                .then(() => console.log("successfully sent"))
-                .catch((e) => console.error(e));
+                .then(() => {
+                    console.log("Successfully sent");
+                    this.message = this.$t("contact.success");
+                    this.success = true;
+                    setTimeout(() => {
+                        this.success = false;
+                    }, 8000);
+                })
+                .catch((e) => {
+                    console.error(e);
+                    this.message = this.$t("contact.error");
+                    this.error = true;
+                    setTimeout(() => {
+                        this.error = false;
+                    }, 8000);
+                });
         },
     },
+    components: { ResponseMessage },
 };
 </script>
 <template>
@@ -84,15 +104,12 @@ export default {
                 {{ $t("contact.form.submit") }}
             </button>
         </form>
+        <ResponseMessage :success="success" :error="error" :message="message" />
     </section>
 </template>
 <style scoped>
 .hidden {
     display: none;
-}
-
-.section {
-    display: flex;
 }
 
 .contact-form {
