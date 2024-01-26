@@ -12,12 +12,16 @@
                 "alt": "Vue"
             },
             {
+                "src": "vite-svgrepo-com.svg",
+                "alt": "Vite"
+            },
+            {
                 "src": "laravel.svg",
                 "alt": "Laravel"
             },
             {
-                "src": "vite-svgrepo-com.svg",
-                "alt": "Vite"
+                "src": "mysql-icon.svg",
+                "alt": "MySQL"
             }
         ],
         "github": "https://github.com/ysimard94/Cantina"
