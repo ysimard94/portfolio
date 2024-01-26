@@ -86,7 +86,7 @@ export default {
         </form>
     </section>
 </template>
-<style>
+<style scoped>
 .hidden {
     display: none;
 }

@@ -128,13 +128,6 @@ const closeMenu = () => {
                         >{{ $t("nav.portfolio") }}</RouterLink
                     >
                     <RouterLink
-                        to="/about"
-                        active-class="active"
-                        @click="closeMenu()"
-                        >{{ $t("nav.about") }}</RouterLink
-                    >
-
-                    <RouterLink
                         to="/contact"
                         active-class="active"
                         @click="closeMenu()"
