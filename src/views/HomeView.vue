@@ -146,7 +146,7 @@ p {
     justify-content: center;
     position: relative;
     margin-inline: auto;
-    min-width: 350px;
+    min-width: 300px;
 }
 .mask-image {
     margin: 0;

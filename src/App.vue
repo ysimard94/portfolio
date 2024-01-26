@@ -80,7 +80,7 @@ main {
 /* ------ Title of pages styling ----- */
 
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.9rem, 5vw, 3.5rem);
     font-weight: 700;
     line-height: 1.2;
 }
