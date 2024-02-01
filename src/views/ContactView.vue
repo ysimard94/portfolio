@@ -2,149 +2,138 @@
 import ResponseMessage from "@/components/ResponseMessage.vue";
 
 export default {
-    name: "ContactView",
-    data: () => ({
-        form: {
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        },
-        success: false,
-        error: false,
-        message: "",
-    }),
-    methods: {
-        encode(data) {
-            return Object.keys(data)
-                .map(
-                    (key) =>
-                        `${encodeURIComponent(key)}=${encodeURIComponent(
-                            data[key],
-                        )}`,
-                )
-                .join("&");
-        },
-        handleSubmit() {
-            fetch("/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: this.encode({
-                    "form-name": "contact",
-                    ...this.form,
-                }),
-            })
-                .then(() => {
-                    console.log("Successfully sent");
-                    this.message = this.$t("contact.success");
-                    this.success = true;
-                    setTimeout(() => {
-                        this.success = false;
-                    }, 8000);
-                })
-                .catch((e) => {
-                    console.error(e);
-                    this.message = this.$t("contact.error");
-                    this.error = true;
-                    setTimeout(() => {
-                        this.error = false;
-                    }, 8000);
-                });
-        },
+  name: "ContactView",
+  data: () => ({
+    form: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
     },
-    components: { ResponseMessage },
+    success: false,
+    error: false,
+    message: "",
+  }),
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit() {
+      fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: this.encode({
+          "form-name": "contact",
+          ...this.form,
+        }),
+      })
+        .then(() => {
+          console.log("Successfully sent");
+          this.message = this.$t("contact.success");
+          this.success = true;
+          setTimeout(() => {
+            this.success = false;
+          }, 8000);
+        })
+        .catch((e) => {
+          console.error(e);
+          this.message = this.$t("contact.error");
+          this.error = true;
+          setTimeout(() => {
+            this.error = false;
+          }, 8000);
+        });
+    },
+  },
+  components: { ResponseMessage },
 };
 </script>
 <template>
-    <section>
-        <div class="title">
-            <h1>{{ $t("contact.title") }}</h1>
-        </div>
-        <form
-            @submit.prevent="handleSubmit"
-            name="contact"
-            method="POST"
-            netlify-honeypot="bot-field"
-            data-netlify="true"
-            class="contact-form"
-        >
-            <p class="hidden">
-                <label>
-                    Don't fill this out if you're human:
-                    <input name="bot-field" />
-                </label>
-            </p>
+  <section>
+    <div class="title">
+      <h1>{{ $t("contact.title") }}</h1>
+    </div>
+    <form
+      @submit.prevent="handleSubmit"
+      name="contact"
+      method="POST"
+      netlify-honeypot="bot-field"
+      data-netlify="true"
+      class="contact-form"
+    >
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human:
+          <input name="bot-field" />
+        </label>
+      </p>
 
-            <label for="name">{{ $t("contact.form.name") }}</label>
-            <input v-model="form.name" type="text" name="name" id="name" />
+      <label for="name">{{ $t("contact.form.name") }}</label>
+      <input v-model="form.name" type="text" name="name" id="name" />
 
-            <label for="email">{{ $t("contact.form.email") }}</label
-            ><input v-model="form.email" type="email" name="email" id="email" />
+      <label for="email">{{ $t("contact.form.email") }}</label
+      ><input v-model="form.email" type="email" name="email" id="email" />
 
-            <label for="subject">{{ $t("contact.form.subject") }}</label>
-            <input
-                v-model="form.subject"
-                type="text"
-                name="subject"
-                id="subject"
-            />
+      <label for="message">{{ $t("contact.form.message") }}</label>
+      <textarea
+        v-model="form.message"
+        type="text"
+        name="message"
+        rows="4"
+        id="message"
+      />
 
-            <label for="message">{{ $t("contact.form.message") }}</label>
-            <textarea
-                v-model="form.message"
-                type="text"
-                name="message"
-                rows="4"
-                id="message"
-            />
-
-            <button type="submit" class="call-to-action">
-                {{ $t("contact.form.submit") }}
-            </button>
-        </form>
-        <ResponseMessage :success="success" :error="error" :message="message" />
-    </section>
+      <button type="submit" class="call-to-action">
+        {{ $t("contact.form.submit") }}
+      </button>
+    </form>
+    <ResponseMessage :success="success" :error="error" :message="message" />
+  </section>
 </template>
 <style scoped>
 .hidden {
-    display: none;
+  display: none;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-    margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  margin-inline: auto;
 }
 
 .contact-form > *:not(p) {
-    width: 100%;
+  width: 100%;
 }
 
 input + label,
 button {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 button[type="submit"] {
-    width: fit-content;
-    margin-left: auto;
+  width: fit-content;
+  margin-left: auto;
 }
 
 input,
 textarea {
-    border: 2px solid hsl(0, 0%, 80%);
-    border-radius: 5px;
-    padding: 0.5rem;
+  border: 2px solid hsl(0, 0%, 80%);
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 input:focus,
 textarea:focus {
-    outline: var(--accent-color) solid 2px;
-    outline-offset: 2px;
-    outline-style: groove;
+  outline: var(--accent-color) solid 2px;
+  outline-offset: 2px;
+  outline-style: groove;
 }
 </style>
