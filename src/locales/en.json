@@ -50,8 +50,14 @@
             "message": "Message",
             "submit": "Send"
         },
-        "success": "Thank you for your message. I will get back to you as soon as possible.",
-        "error": "An error occured while sending your message. Please try again later."
+        "errors": {
+            "form-correct-errors": "Please correct the following error(s):",
+            "form-name": "Name required.",
+            "form-email": "Email required.",
+            "form-message": "Message required.",
+            "submit-success": "Thank you for your message. I will get back to you as soon as possible.",
+            "submit-error": "An error occured while sending your message. Please try again later."
+        }
     },
     "notFound": {
         "title": "Page not found",

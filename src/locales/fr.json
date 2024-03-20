@@ -50,8 +50,14 @@
             "message": "Message",
             "submit": "Soumettre"
         },
-        "success": "Merci pour votre message. Je vous répondrai dès que possible.",
-        "error": "Une erreur est survenue lors de l'envoi. Veuillez réessayer plus tard."
+        "errors": {
+            "form-correct-errors": "S'il vous plait corriger les erreur(s) suivantes:",
+            "form-name": "Nom requis.",
+            "form-email": "Courriel requis.",
+            "form-message": "Message requis.",
+            "submit-success": "Merci pour votre message. Je vous répondrai dès que possible.",
+            "submit-error": "Une erreur est survenue lors de l'envoi. Veuillez réessayer plus tard."
+        }
     },
     "notFound": {
         "title": "Page non trouvée",

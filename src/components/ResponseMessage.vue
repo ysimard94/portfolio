@@ -18,9 +18,9 @@ export default {
     computed: {
         message() {
             if (this.success) {
-                return this.$t("contact.success");
+                return this.$t("contact.errors.submit-success");
             } else if (this.error) {
-                return this.$t("contact.error");
+                return this.$t("contact.errors.submit-error");
             }
         },
     },

@@ -7,12 +7,12 @@ export default {
     form: {
       name: "",
       email: "",
-      subject: "",
       message: "",
     },
     success: false,
     error: false,
     message: "",
+    errors: []
   }),
   methods: {
     encode(data) {
@@ -22,33 +22,52 @@ export default {
         )
         .join("&");
     },
+    validateForm(){
+      if(this.form.name && this.form.email && this.form.message){
+        return true
+      }
+      this.errors = []
+
+      if(!this.form.name) {
+        this.errors.push('name');
+      }
+      if(!this.form.email){
+        this.errors.push('email')
+      }
+      if(!this.form.message){
+        this.errors.push('message')
+      }
+    },
     handleSubmit() {
-      fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: this.encode({
-          "form-name": "contact",
-          ...this.form,
-        }),
-      })
-        .then(() => {
-          console.log("Successfully sent");
-          this.message = this.$t("contact.success");
-          this.success = true;
-          setTimeout(() => {
-            this.success = false;
-          }, 8000);
+      if(this.validateForm() === true){
+        this.errors = [];
+        fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: this.encode({
+            "form-name": "contact",
+            ...this.form,
+          }),
         })
-        .catch((e) => {
-          console.error(e);
-          this.message = this.$t("contact.error");
-          this.error = true;
-          setTimeout(() => {
-            this.error = false;
-          }, 8000);
-        });
+          .then(() => {
+            console.log("Successfully sent");
+            this.message = this.$t("contact.success");
+            this.success = true;
+            setTimeout(() => {
+              this.success = false;
+            }, 8000);
+          })
+          .catch((e) => {
+            console.error(e);
+            this.message = this.$t("contact.error");
+            this.error = true;
+            setTimeout(() => {
+              this.error = false;
+            }, 8000);
+          });
+      }
     },
   },
   components: { ResponseMessage },
@@ -67,6 +86,12 @@ export default {
       data-netlify="true"
       class="contact-form"
     >
+    <p v-if="errors.length">
+    <b>{{$t('contact.errors.form-correct-errors')}}</b>
+    <ul>
+      <li v-for="error in errors" class="errors">{{ $t("contact.errors.form-" + error) }}</li>
+    </ul>
+  </p>
       <p class="hidden">
         <label>
           Don't fill this out if you're human:
@@ -135,5 +160,9 @@ textarea:focus {
   outline: var(--accent-color) solid 2px;
   outline-offset: 2px;
   outline-style: groove;
+}
+
+.errors {
+  color: hsl(15, 80%, 55%);
 }
 </style>
