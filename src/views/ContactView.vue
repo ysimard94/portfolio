@@ -39,7 +39,7 @@ export default {
       }
     },
     handleSubmit() {
-      if(this.validateForm() === true){
+      if(this.validateForm()){
         this.errors = [];
         fetch("/", {
           method: "POST",
