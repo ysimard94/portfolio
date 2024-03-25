@@ -25,6 +25,7 @@ const closeMenu = () => {
             <button
                 @click="themeStore.setTheme('light-theme')"
                 v-if="themeStore.theme === 'dark-theme'"
+                aria-label="Switch to light theme"
             >
                 <!-- Icon from https://heroicons.dev/ -->
                 <svg
@@ -46,6 +47,7 @@ const closeMenu = () => {
             <button
                 @click="themeStore.setTheme('dark-theme')"
                 v-if="themeStore.theme === 'light-theme'"
+                aria-label="Switch to dark theme"
             >
                 <!-- Icon from https://heroicons.dev/ -->
                 <svg
@@ -71,6 +73,7 @@ const closeMenu = () => {
                     localeStore.setLocale('FR');
                 "
                 v-if="$i18n.locale === 'EN'"
+                aria-label="Switch to french"
             >
                 FR
             </button>
@@ -80,6 +83,7 @@ const closeMenu = () => {
                     localeStore.setLocale('EN');
                 "
                 v-if="$i18n.locale === 'FR'"
+                aria-label="Switch to english"
             >
                 EN
             </button>

@@ -163,6 +163,6 @@ textarea:focus {
 }
 
 .errors {
-  color: hsl(15, 80%, 55%);
+  color: hsl(15, 80%, 50%);
 }
 </style>

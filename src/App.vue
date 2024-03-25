@@ -82,7 +82,7 @@ main {
 /* ------ Title of pages styling ----- */
 
 h1 {
-    font-size: clamp(1.9rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -100,10 +100,9 @@ h2 {
 }
 
 .title > h1 {
-    letter-spacing: 16px;
+    letter-spacing: 4px;
     font-family: Yantramanav;
     text-transform: uppercase;
-    font-style: italic;
     padding: 0.5rem 1rem;
 }
 
