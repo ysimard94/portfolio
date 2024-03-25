@@ -100,6 +100,7 @@ h2 {
   letter-spacing: 8px;
   font-family: Yantramanav;
   text-transform: uppercase;
+  font-style: italic;
   padding: 0.5rem 1rem;
 }
 
