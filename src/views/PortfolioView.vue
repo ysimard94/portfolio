@@ -44,7 +44,7 @@ export default {
         <h2>{{ $t(`${project.title}`) }}</h2>
         <p>{{ $t(`${project.description}`) }}</p>
         <div class="languages">
-          <button v-for="language in project.languages" class="language">
+          <button v-for="language in project.languages" class="language" :aria-label=' language.alt '>
             <img
               v-if="
                 language.alt != 'PHP' &&
