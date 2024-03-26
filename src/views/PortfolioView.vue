@@ -165,7 +165,7 @@ p {
 .language img,
 .language svg {
   height: 32px;
-  width: 100%;
+  width: auto;
 }
 
 .tooltip {
