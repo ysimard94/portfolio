@@ -104,7 +104,7 @@ p {
 .mask-image {
   margin: 0;
   height: 375px;
-  width: 375px;
+  width: 350px;
   object-fit: cover;
   mask: url(#maskShape);
 }

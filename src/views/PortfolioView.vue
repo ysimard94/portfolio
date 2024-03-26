@@ -208,13 +208,13 @@ p {
   animation: arrow 1s infinite;
 }
 
-.language:hover .tooltip::after,
-.language:focus-visible .tooltip::after {
+i:hover .tooltip::after,
+i:focus-visible .tooltip::after {
   animation: bouncing 1000ms infinite;
 }
 
-.language:hover .tooltip,
-.language:focus-visible .tooltip {
+i:hover .tooltip,
+i:focus-visible .tooltip {
   bottom: calc(100% + 0.75rem);
   visibility: visible;
   opacity: 1;
