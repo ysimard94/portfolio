@@ -209,12 +209,16 @@ p {
 }
 
 i:hover .tooltip::after,
-i:focus-visible .tooltip::after {
+i:focus-visible .tooltip::after,
+svg:hover .tooltip::after,
+svg:focus-visible .tooltip::after {
   animation: bouncing 1000ms infinite;
 }
 
 i:hover .tooltip,
-i:focus-visible .tooltip {
+i:focus-visible .tooltip,
+svg:hover .tooltip::after,
+svg:focus-visible .tooltip::after {
   bottom: calc(100% + 0.75rem);
   visibility: visible;
   opacity: 1;
