@@ -104,9 +104,9 @@ p {
 .mask-image {
   margin: 0;
   height: 375px;
+  width: 375px;
   object-fit: cover;
   mask: url(#maskShape);
-  z-index: 99;
 }
 
 .picture-mask {
