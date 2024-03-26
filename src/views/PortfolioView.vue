@@ -151,8 +151,8 @@ p {
 
 .languages {
   display: flex;
-  align-items: center;
   gap: 1rem;
+  width: fit-content;
 }
 
 .language {
